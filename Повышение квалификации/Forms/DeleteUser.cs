@@ -50,7 +50,8 @@ namespace Повышение_квалификации
 
         private void DeleteUser_FormClosing(object sender, FormClosingEventArgs e)
         {
-            
+			_parentForm.Show();
+			//this.Close();
         }
 
         private void fillByToolStripButton_Click(object sender, EventArgs e)

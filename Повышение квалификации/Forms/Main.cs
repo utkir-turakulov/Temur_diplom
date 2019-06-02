@@ -25,11 +25,11 @@ namespace Повышение_квалификации
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
-           new ВыборПользователя(this).Show();
-            this.Hide();
+			ВыборПользователя выборПользователя =   new ВыборПользователя(this);
+			выборПользователя.Show();
+		    this.Hide();
 
-        }
+		}
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -38,8 +38,14 @@ namespace Повышение_квалификации
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Справка справка = new Справка();
+            Справка справка = new Справка(this);
             справка.Show();
         }
-    }
+
+		private void FormClosingEvent(object sender, FormClosingEventArgs e)
+		{
+			Application.Exit();
+			//this.Close();
+		}
+	}
 }

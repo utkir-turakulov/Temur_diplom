@@ -16,32 +16,12 @@ namespace Повышение_квалификации
 		public ВыдачаНаправлений()
 		{
 			InitializeComponent();
-
-			/*DbWorker dbWorker = new DbWorker();
-			var data = dbWorker.GetDBData(TEACHER_SELECT_QUERY, 5);
-			FillGrid(dataGridView2, data, 5, new Dictionary<int, string>() {
-					{0, "id"},
-					{1, "firstName"},
-					{2, "midleName"},
-					{3, "lastName"},
-					{4, "dateOfBirth"}
-			});*/
 		}
 
 		public ВыдачаНаправлений(Form form)
 		{
 			_parent = form;
 			InitializeComponent();
-
-			/*DbWorker dbWorker = new DbWorker();
-			var data = dbWorker.GetDBData(TEACHER_SELECT_QUERY, 5);
-			FillGrid(dataGridView2, data, 5, new Dictionary<int, string>() {
-					{0, "id"},
-					{1, "firstName"},
-					{2, "midleName"},
-					{3, "lastName"},
-					{4, "dateOfBirth"}
-			});*/
 		}
 
 
@@ -53,6 +33,8 @@ namespace Повышение_квалификации
 
 		private void ОдобритьКурс_Load(object sender, EventArgs e)
 		{
+			// TODO: данная строка кода позволяет загрузить данные в таблицу "coursesDataSet.TeachersView". При необходимости она может быть перемещена или удалена.
+			this.teachersViewTableAdapter.Fill(this.coursesDataSet.TeachersView);
 			// TODO: данная строка кода позволяет загрузить данные в таблицу "coursesDataSet.CoursesView". При необходимости она может быть перемещена или удалена.
 			this.coursesViewTableAdapter.Fill(this.coursesDataSet.CoursesView);
 			// TODO: данная строка кода позволяет загрузить данные в таблицу "coursesDataSet.CourseNotPassedView". При необходимости она может быть перемещена или удалена.
@@ -91,16 +73,6 @@ namespace Повышение_квалификации
 		private void button3_Click(object sender, EventArgs e)
 		{
 			DbWorker dbWorker = new DbWorker();
-			dataGridView2.Rows.Clear();
-			var data = dbWorker.GetDBData(TEACHER_SELECT_QUERY, 5);
-
-			FillGrid(dataGridView2, data, 5, new Dictionary<int, string>() {
-					{0, "id"},
-					{1, "firstName"},
-					{2, "midleName"},
-					{3, "lastName"},
-					{4, "dateOfBirth"}
-			});
 
 			int teacherIndex = dataGridView2.CurrentRow.Index;
 			int courseIndex = dataGridView3.CurrentRow.Index;
@@ -109,13 +81,13 @@ namespace Повышение_квалификации
 							values({0},{1},1);";
 
 
-			if (teacherIndex == null || teacherIndex <0)
+			if (teacherIndex <0)
 			{
 				MessageBox.Show("Не выбран преподаватель");
 				return;
 			}
 
-			if (courseIndex == null || courseIndex < 0)
+			if (courseIndex < 0)
 			{
 				MessageBox.Show("Не выбран курс");
 				return;
@@ -179,7 +151,6 @@ namespace Повышение_квалификации
 			try
 			{
 				DbWorker dbWorker = new DbWorker();
-		//		var education = dbWorker.GetEducation(educationId);
 				string selectedPath = null;
 
 				if (!string.IsNullOrEmpty(educationId) || !string.IsNullOrWhiteSpace(educationId))
@@ -232,5 +203,11 @@ namespace Повышение_квалификации
         {
 
         }
-    }
+
+		private void FormClosingEvent(object sender, FormClosingEventArgs e)
+		{
+			_parent.Show();
+			//this.Close();
+		}
+	}
 }

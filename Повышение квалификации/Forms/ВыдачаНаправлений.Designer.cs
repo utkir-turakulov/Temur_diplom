@@ -32,6 +32,15 @@
 			this.button1 = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.button2 = new System.Windows.Forms.Button();
+			this.button3 = new System.Windows.Forms.Button();
+			this.tabControl1 = new System.Windows.Forms.TabControl();
+			this.tabPage1 = new System.Windows.Forms.TabPage();
+			this.tabPage2 = new System.Windows.Forms.TabPage();
+			this.label3 = new System.Windows.Forms.Label();
+			this.label2 = new System.Windows.Forms.Label();
+			this.dataGridView3 = new System.Windows.Forms.DataGridView();
+			this.dataGridView2 = new System.Windows.Forms.DataGridView();
 			this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.midleNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,15 +51,6 @@
 			this.courseVolumeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.courseNotPassedViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.coursesDataSet = new Повышение_квалификации.CoursesDataSet();
-			this.courseNotPassedViewTableAdapter = new Повышение_квалификации.CoursesDataSetTableAdapters.CourseNotPassedViewTableAdapter();
-			this.button2 = new System.Windows.Forms.Button();
-			this.button3 = new System.Windows.Forms.Button();
-			this.tabControl1 = new System.Windows.Forms.TabControl();
-			this.tabPage1 = new System.Windows.Forms.TabPage();
-			this.tabPage2 = new System.Windows.Forms.TabPage();
-			this.label3 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
-			this.dataGridView3 = new System.Windows.Forms.DataGridView();
 			this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.coursNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.courseVolumeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,17 +59,25 @@
 			this.startDateDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.endDateDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.coursesViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.dataGridView2 = new System.Windows.Forms.DataGridView();
+			this.courseNotPassedViewTableAdapter = new Повышение_квалификации.CoursesDataSetTableAdapters.CourseNotPassedViewTableAdapter();
 			this.coursesViewTableAdapter = new Повышение_квалификации.CoursesDataSetTableAdapters.CoursesViewTableAdapter();
+			this.teachersViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.teachersViewTableAdapter = new Повышение_квалификации.CoursesDataSetTableAdapters.TeachersViewTableAdapter();
+			this.idDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.firstNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.midleNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.lastNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dateOfBirthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.courseNotPassedViewBindingSource)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.coursesDataSet)).BeginInit();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.tabPage2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.coursesViewBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.courseNotPassedViewBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.coursesDataSet)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.coursesViewBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.teachersViewBindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// button1
@@ -87,7 +95,7 @@
 			this.label1.AutoSize = true;
 			this.label1.BackColor = System.Drawing.Color.Transparent;
 			this.label1.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.label1.Location = new System.Drawing.Point(384, 19);
+			this.label1.Location = new System.Drawing.Point(379, 9);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(244, 30);
 			this.label1.TabIndex = 6;
@@ -113,68 +121,6 @@
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.Size = new System.Drawing.Size(849, 328);
 			this.dataGridView1.TabIndex = 7;
-			// 
-			// idDataGridViewTextBoxColumn
-			// 
-			this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-			this.idDataGridViewTextBoxColumn.HeaderText = "id";
-			this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-			// 
-			// firstNameDataGridViewTextBoxColumn
-			// 
-			this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "firstName";
-			this.firstNameDataGridViewTextBoxColumn.HeaderText = "firstName";
-			this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-			// 
-			// midleNameDataGridViewTextBoxColumn
-			// 
-			this.midleNameDataGridViewTextBoxColumn.DataPropertyName = "midleName";
-			this.midleNameDataGridViewTextBoxColumn.HeaderText = "midleName";
-			this.midleNameDataGridViewTextBoxColumn.Name = "midleNameDataGridViewTextBoxColumn";
-			// 
-			// lastNameDataGridViewTextBoxColumn
-			// 
-			this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "lastName";
-			this.lastNameDataGridViewTextBoxColumn.HeaderText = "lastName";
-			this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-			// 
-			// coursNameDataGridViewTextBoxColumn
-			// 
-			this.coursNameDataGridViewTextBoxColumn.DataPropertyName = "coursName";
-			this.coursNameDataGridViewTextBoxColumn.HeaderText = "coursName";
-			this.coursNameDataGridViewTextBoxColumn.Name = "coursNameDataGridViewTextBoxColumn";
-			// 
-			// startDateDataGridViewTextBoxColumn
-			// 
-			this.startDateDataGridViewTextBoxColumn.DataPropertyName = "startDate";
-			this.startDateDataGridViewTextBoxColumn.HeaderText = "startDate";
-			this.startDateDataGridViewTextBoxColumn.Name = "startDateDataGridViewTextBoxColumn";
-			// 
-			// endDateDataGridViewTextBoxColumn
-			// 
-			this.endDateDataGridViewTextBoxColumn.DataPropertyName = "endDate";
-			this.endDateDataGridViewTextBoxColumn.HeaderText = "endDate";
-			this.endDateDataGridViewTextBoxColumn.Name = "endDateDataGridViewTextBoxColumn";
-			// 
-			// courseVolumeDataGridViewTextBoxColumn
-			// 
-			this.courseVolumeDataGridViewTextBoxColumn.DataPropertyName = "courseVolume";
-			this.courseVolumeDataGridViewTextBoxColumn.HeaderText = "courseVolume";
-			this.courseVolumeDataGridViewTextBoxColumn.Name = "courseVolumeDataGridViewTextBoxColumn";
-			// 
-			// courseNotPassedViewBindingSource
-			// 
-			this.courseNotPassedViewBindingSource.DataMember = "CourseNotPassedView";
-			this.courseNotPassedViewBindingSource.DataSource = this.coursesDataSet;
-			// 
-			// coursesDataSet
-			// 
-			this.coursesDataSet.DataSetName = "CoursesDataSet";
-			this.coursesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-			// 
-			// courseNotPassedViewTableAdapter
-			// 
-			this.courseNotPassedViewTableAdapter.ClearBeforeFill = true;
 			// 
 			// button2
 			// 
@@ -282,6 +228,82 @@
 			this.dataGridView3.TabIndex = 1;
 			this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
 			// 
+			// dataGridView2
+			// 
+			this.dataGridView2.AllowUserToAddRows = false;
+			this.dataGridView2.AllowUserToDeleteRows = false;
+			this.dataGridView2.AutoGenerateColumns = false;
+			this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn2,
+            this.firstNameDataGridViewTextBoxColumn1,
+            this.midleNameDataGridViewTextBoxColumn1,
+            this.lastNameDataGridViewTextBoxColumn1,
+            this.dateOfBirthDataGridViewTextBoxColumn});
+			this.dataGridView2.DataSource = this.teachersViewBindingSource;
+			this.dataGridView2.Location = new System.Drawing.Point(6, 61);
+			this.dataGridView2.Name = "dataGridView2";
+			this.dataGridView2.Size = new System.Drawing.Size(547, 313);
+			this.dataGridView2.TabIndex = 0;
+			// 
+			// idDataGridViewTextBoxColumn
+			// 
+			this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+			this.idDataGridViewTextBoxColumn.HeaderText = "id";
+			this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+			// 
+			// firstNameDataGridViewTextBoxColumn
+			// 
+			this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "firstName";
+			this.firstNameDataGridViewTextBoxColumn.HeaderText = "firstName";
+			this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+			// 
+			// midleNameDataGridViewTextBoxColumn
+			// 
+			this.midleNameDataGridViewTextBoxColumn.DataPropertyName = "midleName";
+			this.midleNameDataGridViewTextBoxColumn.HeaderText = "midleName";
+			this.midleNameDataGridViewTextBoxColumn.Name = "midleNameDataGridViewTextBoxColumn";
+			// 
+			// lastNameDataGridViewTextBoxColumn
+			// 
+			this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "lastName";
+			this.lastNameDataGridViewTextBoxColumn.HeaderText = "lastName";
+			this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+			// 
+			// coursNameDataGridViewTextBoxColumn
+			// 
+			this.coursNameDataGridViewTextBoxColumn.DataPropertyName = "coursName";
+			this.coursNameDataGridViewTextBoxColumn.HeaderText = "coursName";
+			this.coursNameDataGridViewTextBoxColumn.Name = "coursNameDataGridViewTextBoxColumn";
+			// 
+			// startDateDataGridViewTextBoxColumn
+			// 
+			this.startDateDataGridViewTextBoxColumn.DataPropertyName = "startDate";
+			this.startDateDataGridViewTextBoxColumn.HeaderText = "startDate";
+			this.startDateDataGridViewTextBoxColumn.Name = "startDateDataGridViewTextBoxColumn";
+			// 
+			// endDateDataGridViewTextBoxColumn
+			// 
+			this.endDateDataGridViewTextBoxColumn.DataPropertyName = "endDate";
+			this.endDateDataGridViewTextBoxColumn.HeaderText = "endDate";
+			this.endDateDataGridViewTextBoxColumn.Name = "endDateDataGridViewTextBoxColumn";
+			// 
+			// courseVolumeDataGridViewTextBoxColumn
+			// 
+			this.courseVolumeDataGridViewTextBoxColumn.DataPropertyName = "courseVolume";
+			this.courseVolumeDataGridViewTextBoxColumn.HeaderText = "courseVolume";
+			this.courseVolumeDataGridViewTextBoxColumn.Name = "courseVolumeDataGridViewTextBoxColumn";
+			// 
+			// courseNotPassedViewBindingSource
+			// 
+			this.courseNotPassedViewBindingSource.DataMember = "CourseNotPassedView";
+			this.courseNotPassedViewBindingSource.DataSource = this.coursesDataSet;
+			// 
+			// coursesDataSet
+			// 
+			this.coursesDataSet.DataSetName = "CoursesDataSet";
+			this.coursesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+			// 
 			// idDataGridViewTextBoxColumn1
 			// 
 			this.idDataGridViewTextBoxColumn1.DataPropertyName = "id";
@@ -329,19 +351,53 @@
 			this.coursesViewBindingSource.DataMember = "CoursesView";
 			this.coursesViewBindingSource.DataSource = this.coursesDataSet;
 			// 
-			// dataGridView2
+			// courseNotPassedViewTableAdapter
 			// 
-			this.dataGridView2.AllowUserToAddRows = false;
-			this.dataGridView2.AllowUserToDeleteRows = false;
-			this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView2.Location = new System.Drawing.Point(6, 61);
-			this.dataGridView2.Name = "dataGridView2";
-			this.dataGridView2.Size = new System.Drawing.Size(547, 313);
-			this.dataGridView2.TabIndex = 0;
+			this.courseNotPassedViewTableAdapter.ClearBeforeFill = true;
 			// 
 			// coursesViewTableAdapter
 			// 
 			this.coursesViewTableAdapter.ClearBeforeFill = true;
+			// 
+			// teachersViewBindingSource
+			// 
+			this.teachersViewBindingSource.DataMember = "TeachersView";
+			this.teachersViewBindingSource.DataSource = this.coursesDataSet;
+			// 
+			// teachersViewTableAdapter
+			// 
+			this.teachersViewTableAdapter.ClearBeforeFill = true;
+			// 
+			// idDataGridViewTextBoxColumn2
+			// 
+			this.idDataGridViewTextBoxColumn2.DataPropertyName = "id";
+			this.idDataGridViewTextBoxColumn2.HeaderText = "id";
+			this.idDataGridViewTextBoxColumn2.Name = "idDataGridViewTextBoxColumn2";
+			this.idDataGridViewTextBoxColumn2.ReadOnly = true;
+			// 
+			// firstNameDataGridViewTextBoxColumn1
+			// 
+			this.firstNameDataGridViewTextBoxColumn1.DataPropertyName = "firstName";
+			this.firstNameDataGridViewTextBoxColumn1.HeaderText = "firstName";
+			this.firstNameDataGridViewTextBoxColumn1.Name = "firstNameDataGridViewTextBoxColumn1";
+			// 
+			// midleNameDataGridViewTextBoxColumn1
+			// 
+			this.midleNameDataGridViewTextBoxColumn1.DataPropertyName = "midleName";
+			this.midleNameDataGridViewTextBoxColumn1.HeaderText = "midleName";
+			this.midleNameDataGridViewTextBoxColumn1.Name = "midleNameDataGridViewTextBoxColumn1";
+			// 
+			// lastNameDataGridViewTextBoxColumn1
+			// 
+			this.lastNameDataGridViewTextBoxColumn1.DataPropertyName = "lastName";
+			this.lastNameDataGridViewTextBoxColumn1.HeaderText = "lastName";
+			this.lastNameDataGridViewTextBoxColumn1.Name = "lastNameDataGridViewTextBoxColumn1";
+			// 
+			// dateOfBirthDataGridViewTextBoxColumn
+			// 
+			this.dateOfBirthDataGridViewTextBoxColumn.DataPropertyName = "dateOfBirth";
+			this.dateOfBirthDataGridViewTextBoxColumn.HeaderText = "dateOfBirth";
+			this.dateOfBirthDataGridViewTextBoxColumn.Name = "dateOfBirthDataGridViewTextBoxColumn";
 			// 
 			// ВыдачаНаправлений
 			// 
@@ -356,17 +412,19 @@
 			this.ShowIcon = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Выдача направлений";
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormClosingEvent);
 			this.Load += new System.EventHandler(this.ОдобритьКурс_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.courseNotPassedViewBindingSource)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.coursesDataSet)).EndInit();
 			this.tabControl1.ResumeLayout(false);
 			this.tabPage1.ResumeLayout(false);
 			this.tabPage2.ResumeLayout(false);
 			this.tabPage2.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.coursesViewBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.courseNotPassedViewBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.coursesDataSet)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.coursesViewBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.teachersViewBindingSource)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -406,5 +464,12 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn endDateDataGridViewTextBoxColumn1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-    }
+		private System.Windows.Forms.BindingSource teachersViewBindingSource;
+		private CoursesDataSetTableAdapters.TeachersViewTableAdapter teachersViewTableAdapter;
+		private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn2;
+		private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn1;
+		private System.Windows.Forms.DataGridViewTextBoxColumn midleNameDataGridViewTextBoxColumn1;
+		private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn1;
+		private System.Windows.Forms.DataGridViewTextBoxColumn dateOfBirthDataGridViewTextBoxColumn;
+	}
 }

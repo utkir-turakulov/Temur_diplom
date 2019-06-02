@@ -12,8 +12,11 @@ namespace Повышение_квалификации
 {
     public partial class Справка : Form
     {
-        public Справка()
+		private Form _parent = null;
+
+		public Справка(Form form)
         {
+			_parent = form;
             InitializeComponent();
         }
         
@@ -24,9 +27,14 @@ namespace Повышение_квалификации
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            this.Hide();
-            Form1.ActiveForm.Show();
+			_parent.Show();
+			this.Close();
         }
-    }
+
+		private void FormClosingEvent(object sender, FormClosingEventArgs e)
+		{
+			_parent.Show();
+			//this.Close();
+		}
+	}
 }

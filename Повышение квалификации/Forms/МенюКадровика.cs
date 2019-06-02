@@ -46,7 +46,7 @@ namespace Повышение_квалификации
         private void FormClosingEvent(object sender, FormClosingEventArgs e)
         {
             Выбор.Show();
-            this.Hide();
+           // this.Hide();
         }
     }
 }

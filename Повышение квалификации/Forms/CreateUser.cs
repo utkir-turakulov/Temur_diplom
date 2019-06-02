@@ -245,5 +245,11 @@ namespace Повышение_квалификации
 				MessageBox.Show("Запись не добавлена");
 			}
 		}
+
+		private void FormClosingEvent(object sender, FormClosingEventArgs e)
+		{
+			_parentForm.Show();
+			//this.Close();
+		}
 	}
 }

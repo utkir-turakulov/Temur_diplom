@@ -8,20 +8,20 @@ namespace Повышение_квалификации
 {
 	public partial class МенюМетодиста : Form
 	{
-		ВыборПользователя ВыборПользователя = null;
+		ВыборПользователя _parent = null;
 		private User _user = null;
 
 		public МенюМетодиста(ВыборПользователя выборПользователя, User user)
 		{
 			_user = user;
-			ВыборПользователя = выборПользователя;
+			_parent = выборПользователя;
 			InitializeComponent();
 		}
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			ВыборПользователя.Show();
-			this.Hide();
+			_parent.Show();
+			this.Close();
 		}
 
 		private void МенюМетодиста_Load(object sender, EventArgs e)
@@ -34,17 +34,6 @@ namespace Повышение_квалификации
 			this.видКурсаTableAdapter.Fill(this.coursesDataSet1.ВидКурса);
 			// TODO: данная строка кода позволяет загрузить данные в таблицу "coursesDataSet.CoursesView". При необходимости она может быть перемещена или удалена.
 			this.coursesViewTableAdapter.Fill(this.coursesDataSet.CoursesView);
-			// TODO: данная строка кода позволяет загрузить данные в таблицу "coursesDataSet.Курсы". При необходимости она может быть перемещена или удалена.
-			//this.курсыTableAdapter.Fill(this.coursesDataSet.Курсы);
-			// TODO: данная строка кода позволяет загрузить данные в таблицу "silverHa.ФормаОбучения". При необходимости она может быть перемещена или удалена.
-			//   this.формаОбученияTableAdapter.Fill(this.silverHa.ФормаОбучения);
-			// TODO: данная строка кода позволяет загрузить данные в таблицу "silverHa.ВидКурса". При необходимости она может быть перемещена или удалена.
-			//   this.видКурсаTableAdapter.Fill(this.silverHa.ВидКурса);
-			// TODO: данная строка кода позволяет загрузить данные в таблицу "silverHa.Курсы". При необходимости она может быть перемещена или удалена.
-			//   this.курсыTableAdapter.Fill(this.silverHa.Курсы);
-			// TODO: данная строка кода позволяет загрузить данные в таблицу "курсы_ОбученяDataSet.Курсы". При необходимости она может быть перемещена или удалена.
-
-
 		}
 
 		private void textBox1_TextChanged(object sender, EventArgs e)
@@ -254,6 +243,12 @@ namespace Повышение_квалификации
 				dataGridView1.Refresh();
 				this.coursesViewTableAdapter.Fill(this.coursesDataSet.CoursesView);
 			}
+		}
+
+		private void FormClosingEvent(object sender, FormClosingEventArgs e)
+		{
+			_parent.Show();
+			//this.Close();
 		}
 	}
 }

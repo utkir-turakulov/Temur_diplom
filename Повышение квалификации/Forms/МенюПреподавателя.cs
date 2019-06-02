@@ -14,13 +14,13 @@ namespace Повышение_квалификации
 {
     public partial class МенюПреподавателя : Form
     {
-        ВыборПользователя Пользователя = null;
+        ВыборПользователя _parent = null;
         private User _user = null;
 
         public МенюПреподавателя(ВыборПользователя выборПользователя, User user)
         {
             _user = user;
-            Пользователя = выборПользователя;
+            _parent = выборПользователя;
             InitializeComponent();
 		}
 
@@ -40,7 +40,7 @@ namespace Повышение_квалификации
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Пользователя.Show();
+            _parent.Show();
             this.Hide();
         }
 
@@ -139,6 +139,12 @@ namespace Повышение_квалификации
 				connection.Close();
 			}
 
+		}
+
+		private void FormClosingEvent(object sender, FormClosingEventArgs e)
+		{
+			_parent.Show();
+			//this.Close();
 		}
 	}
 }

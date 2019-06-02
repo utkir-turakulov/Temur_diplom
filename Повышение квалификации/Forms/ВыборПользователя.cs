@@ -25,7 +25,7 @@ namespace Повышение_квалификации
             if (dbWorker.IsExactUser(textBox3.Text, textBox4.Text, (int)DbWorker.Roles.Admin))
             {
                 user = dbWorker.GetUser(textBox3.Text, textBox4.Text);
-                МенюАдминистратора менюАдминистратора = new МенюАдминистратора(user);
+                МенюАдминистратора менюАдминистратора = new МенюАдминистратора(this, user);
                 менюАдминистратора.Show();
                 this.Hide();
                 return;
@@ -69,8 +69,9 @@ namespace Повышение_квалификации
 
         private void ВыборПользователя_FormClosing(object sender, FormClosingEventArgs e)
         {
-
-        }
+			main.Show();
+			//this.Close();
+		}
 
         private void ВыборПользователя_Load(object sender, EventArgs e)
         {
