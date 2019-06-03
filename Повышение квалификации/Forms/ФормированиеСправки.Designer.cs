@@ -91,6 +91,7 @@
 			this.dataGridView1.DataSource = this.coursePassedViewBindingSource;
 			this.dataGridView1.Location = new System.Drawing.Point(32, 60);
 			this.dataGridView1.Name = "dataGridView1";
+			this.dataGridView1.ReadOnly = true;
 			this.dataGridView1.Size = new System.Drawing.Size(856, 350);
 			this.dataGridView1.TabIndex = 11;
 			// 
@@ -99,48 +100,56 @@
 			this.dataGridViewTextBoxColumn1.DataPropertyName = "id";
 			this.dataGridViewTextBoxColumn1.HeaderText = "id";
 			this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+			this.dataGridViewTextBoxColumn1.ReadOnly = true;
 			// 
 			// dataGridViewTextBoxColumn2
 			// 
 			this.dataGridViewTextBoxColumn2.DataPropertyName = "firstName";
 			this.dataGridViewTextBoxColumn2.HeaderText = "firstName";
 			this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+			this.dataGridViewTextBoxColumn2.ReadOnly = true;
 			// 
 			// dataGridViewTextBoxColumn3
 			// 
 			this.dataGridViewTextBoxColumn3.DataPropertyName = "midleName";
 			this.dataGridViewTextBoxColumn3.HeaderText = "midleName";
 			this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+			this.dataGridViewTextBoxColumn3.ReadOnly = true;
 			// 
 			// dataGridViewTextBoxColumn4
 			// 
 			this.dataGridViewTextBoxColumn4.DataPropertyName = "lastName";
 			this.dataGridViewTextBoxColumn4.HeaderText = "lastName";
 			this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+			this.dataGridViewTextBoxColumn4.ReadOnly = true;
 			// 
 			// dataGridViewTextBoxColumn5
 			// 
 			this.dataGridViewTextBoxColumn5.DataPropertyName = "coursName";
 			this.dataGridViewTextBoxColumn5.HeaderText = "coursName";
 			this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+			this.dataGridViewTextBoxColumn5.ReadOnly = true;
 			// 
 			// dataGridViewTextBoxColumn6
 			// 
 			this.dataGridViewTextBoxColumn6.DataPropertyName = "startDate";
 			this.dataGridViewTextBoxColumn6.HeaderText = "startDate";
 			this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+			this.dataGridViewTextBoxColumn6.ReadOnly = true;
 			// 
 			// dataGridViewTextBoxColumn7
 			// 
 			this.dataGridViewTextBoxColumn7.DataPropertyName = "endDate";
 			this.dataGridViewTextBoxColumn7.HeaderText = "endDate";
 			this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+			this.dataGridViewTextBoxColumn7.ReadOnly = true;
 			// 
 			// courseVolumeDataGridViewTextBoxColumn
 			// 
 			this.courseVolumeDataGridViewTextBoxColumn.DataPropertyName = "courseVolume";
 			this.courseVolumeDataGridViewTextBoxColumn.HeaderText = "courseVolume";
 			this.courseVolumeDataGridViewTextBoxColumn.Name = "courseVolumeDataGridViewTextBoxColumn";
+			this.courseVolumeDataGridViewTextBoxColumn.ReadOnly = true;
 			// 
 			// coursePassedViewBindingSource
 			// 

@@ -266,7 +266,7 @@ namespace Повышение_квалификации
 									set @authId = (select authId from Пользователи where id = {0});
 									update Авторизация
 									set login = N'{1}',
-									password={2}
+									password=N'{2}'
 									where id=@authId;
 								end;
 							";

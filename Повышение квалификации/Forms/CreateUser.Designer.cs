@@ -181,7 +181,7 @@
 			// 
 			// textBox8
 			// 
-			this.textBox8.Location = new System.Drawing.Point(191, 297);
+			this.textBox8.Location = new System.Drawing.Point(191, 194);
 			this.textBox8.Multiline = true;
 			this.textBox8.Name = "textBox8";
 			this.textBox8.Size = new System.Drawing.Size(160, 30);
@@ -235,7 +235,7 @@
 			// 
 			// textBox9
 			// 
-			this.textBox9.Location = new System.Drawing.Point(191, 248);
+			this.textBox9.Location = new System.Drawing.Point(191, 301);
 			this.textBox9.Multiline = true;
 			this.textBox9.Name = "textBox9";
 			this.textBox9.Size = new System.Drawing.Size(160, 32);
@@ -243,7 +243,7 @@
 			// 
 			// textBox10
 			// 
-			this.textBox10.Location = new System.Drawing.Point(191, 194);
+			this.textBox10.Location = new System.Drawing.Point(191, 244);
 			this.textBox10.Multiline = true;
 			this.textBox10.Name = "textBox10";
 			this.textBox10.Size = new System.Drawing.Size(160, 30);
@@ -291,6 +291,7 @@
 			this.dataGridView1.DataSource = this.userDataBindingSource;
 			this.dataGridView1.Location = new System.Drawing.Point(369, 86);
 			this.dataGridView1.Name = "dataGridView1";
+			this.dataGridView1.ReadOnly = true;
 			this.dataGridView1.Size = new System.Drawing.Size(851, 663);
 			this.dataGridView1.TabIndex = 47;
 			// 
@@ -299,48 +300,56 @@
 			this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
 			this.idDataGridViewTextBoxColumn.HeaderText = "id";
 			this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+			this.idDataGridViewTextBoxColumn.ReadOnly = true;
 			// 
 			// firstNameDataGridViewTextBoxColumn
 			// 
 			this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "firstName";
 			this.firstNameDataGridViewTextBoxColumn.HeaderText = "firstName";
 			this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+			this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
 			// 
 			// midleNameDataGridViewTextBoxColumn
 			// 
 			this.midleNameDataGridViewTextBoxColumn.DataPropertyName = "midleName";
 			this.midleNameDataGridViewTextBoxColumn.HeaderText = "midleName";
 			this.midleNameDataGridViewTextBoxColumn.Name = "midleNameDataGridViewTextBoxColumn";
+			this.midleNameDataGridViewTextBoxColumn.ReadOnly = true;
 			// 
 			// lastNameDataGridViewTextBoxColumn
 			// 
 			this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "lastName";
 			this.lastNameDataGridViewTextBoxColumn.HeaderText = "lastName";
 			this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+			this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
 			// 
 			// dateOfBirthDataGridViewTextBoxColumn
 			// 
 			this.dateOfBirthDataGridViewTextBoxColumn.DataPropertyName = "dateOfBirth";
 			this.dateOfBirthDataGridViewTextBoxColumn.HeaderText = "dateOfBirth";
 			this.dateOfBirthDataGridViewTextBoxColumn.Name = "dateOfBirthDataGridViewTextBoxColumn";
+			this.dateOfBirthDataGridViewTextBoxColumn.ReadOnly = true;
 			// 
 			// loginDataGridViewTextBoxColumn
 			// 
 			this.loginDataGridViewTextBoxColumn.DataPropertyName = "login";
 			this.loginDataGridViewTextBoxColumn.HeaderText = "login";
 			this.loginDataGridViewTextBoxColumn.Name = "loginDataGridViewTextBoxColumn";
+			this.loginDataGridViewTextBoxColumn.ReadOnly = true;
 			// 
 			// passwordDataGridViewTextBoxColumn
 			// 
 			this.passwordDataGridViewTextBoxColumn.DataPropertyName = "password";
 			this.passwordDataGridViewTextBoxColumn.HeaderText = "password";
 			this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
+			this.passwordDataGridViewTextBoxColumn.ReadOnly = true;
 			// 
 			// roleNameDataGridViewTextBoxColumn
 			// 
 			this.roleNameDataGridViewTextBoxColumn.DataPropertyName = "roleName";
 			this.roleNameDataGridViewTextBoxColumn.HeaderText = "roleName";
 			this.roleNameDataGridViewTextBoxColumn.Name = "roleNameDataGridViewTextBoxColumn";
+			this.roleNameDataGridViewTextBoxColumn.ReadOnly = true;
 			// 
 			// userDataBindingSource
 			// 

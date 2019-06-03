@@ -109,6 +109,7 @@
 			this.dataGridView2.DataSource = this.userDataBindingSource;
 			this.dataGridView2.Location = new System.Drawing.Point(376, 77);
 			this.dataGridView2.Name = "dataGridView2";
+			this.dataGridView2.ReadOnly = true;
 			this.dataGridView2.Size = new System.Drawing.Size(845, 471);
 			this.dataGridView2.TabIndex = 23;
 			this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.RowClickEvent);
@@ -119,48 +120,56 @@
 			this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
 			this.idDataGridViewTextBoxColumn.HeaderText = "id";
 			this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+			this.idDataGridViewTextBoxColumn.ReadOnly = true;
 			// 
 			// firstNameDataGridViewTextBoxColumn
 			// 
 			this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "firstName";
 			this.firstNameDataGridViewTextBoxColumn.HeaderText = "firstName";
 			this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+			this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
 			// 
 			// midleNameDataGridViewTextBoxColumn
 			// 
 			this.midleNameDataGridViewTextBoxColumn.DataPropertyName = "midleName";
 			this.midleNameDataGridViewTextBoxColumn.HeaderText = "midleName";
 			this.midleNameDataGridViewTextBoxColumn.Name = "midleNameDataGridViewTextBoxColumn";
+			this.midleNameDataGridViewTextBoxColumn.ReadOnly = true;
 			// 
 			// lastNameDataGridViewTextBoxColumn
 			// 
 			this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "lastName";
 			this.lastNameDataGridViewTextBoxColumn.HeaderText = "lastName";
 			this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+			this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
 			// 
 			// dateOfBirthDataGridViewTextBoxColumn
 			// 
 			this.dateOfBirthDataGridViewTextBoxColumn.DataPropertyName = "dateOfBirth";
 			this.dateOfBirthDataGridViewTextBoxColumn.HeaderText = "dateOfBirth";
 			this.dateOfBirthDataGridViewTextBoxColumn.Name = "dateOfBirthDataGridViewTextBoxColumn";
+			this.dateOfBirthDataGridViewTextBoxColumn.ReadOnly = true;
 			// 
 			// loginDataGridViewTextBoxColumn
 			// 
 			this.loginDataGridViewTextBoxColumn.DataPropertyName = "login";
 			this.loginDataGridViewTextBoxColumn.HeaderText = "login";
 			this.loginDataGridViewTextBoxColumn.Name = "loginDataGridViewTextBoxColumn";
+			this.loginDataGridViewTextBoxColumn.ReadOnly = true;
 			// 
 			// passwordDataGridViewTextBoxColumn
 			// 
 			this.passwordDataGridViewTextBoxColumn.DataPropertyName = "password";
 			this.passwordDataGridViewTextBoxColumn.HeaderText = "password";
 			this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
+			this.passwordDataGridViewTextBoxColumn.ReadOnly = true;
 			// 
 			// roleNameDataGridViewTextBoxColumn
 			// 
 			this.roleNameDataGridViewTextBoxColumn.DataPropertyName = "roleName";
 			this.roleNameDataGridViewTextBoxColumn.HeaderText = "roleName";
 			this.roleNameDataGridViewTextBoxColumn.Name = "roleNameDataGridViewTextBoxColumn";
+			this.roleNameDataGridViewTextBoxColumn.ReadOnly = true;
 			// 
 			// userDataBindingSource
 			// 
@@ -174,21 +183,21 @@
 			// 
 			// firstName
 			// 
-			this.firstName.Location = new System.Drawing.Point(179, 255);
+			this.firstName.Location = new System.Drawing.Point(179, 165);
 			this.firstName.Name = "firstName";
 			this.firstName.Size = new System.Drawing.Size(164, 20);
 			this.firstName.TabIndex = 8;
 			// 
 			// midleName
 			// 
-			this.midleName.Location = new System.Drawing.Point(179, 209);
+			this.midleName.Location = new System.Drawing.Point(180, 255);
 			this.midleName.Name = "midleName";
 			this.midleName.Size = new System.Drawing.Size(164, 20);
 			this.midleName.TabIndex = 9;
 			// 
 			// lastName
 			// 
-			this.lastName.Location = new System.Drawing.Point(179, 165);
+			this.lastName.Location = new System.Drawing.Point(180, 209);
 			this.lastName.Name = "lastName";
 			this.lastName.Size = new System.Drawing.Size(164, 20);
 			this.lastName.TabIndex = 10;

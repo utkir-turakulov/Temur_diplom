@@ -116,7 +116,7 @@ namespace Повышение_квалификации
 			SqlConnection connection = dbWorker.GetConnection();
 			SqlCommand command = new SqlCommand();
 			string queryComand = @" update Авторизация
-                                      set login='{0}', password = '{1}' 
+                                      set login=N'{0}', password = N'{1}' 
                                       where id = {2};";
 			try
 			{
@@ -150,8 +150,6 @@ namespace Повышение_квалификации
 			{
 				if (e.RowIndex >= 0)
 				{
-					/*  queryComand = string.Format(queryComand,
-											  dataGridView2[0, e.RowIndex + 1].Value.ToString());*/
 					command.CommandText = queryComand;
 					connection.Open();
 					command.Connection = connection;

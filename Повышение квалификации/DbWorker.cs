@@ -63,11 +63,11 @@ namespace Повышение_квалификации
                                 declare @id int;
                                 declare @date datetime;
                                 insert Авторизация(login,password)
-                                values('{0}', '{1}');		
+                                values(N'{0}', N'{1}');		
                                 set @id = (SELECT SCOPE_IDENTITY());
                                 set @date = (select CONVERT(datetime, '{5}', 103));
                                 insert Пользователи(firstName,midleName,lastName,dateOfBirth,authId,roleId)
-                                values('{2}','{3}','{4}',@date,@id,{6});   
+                                values(N'{2}',N'{3}',N'{4}',@date,@id,{6});   
                                 SELECT SCOPE_IDENTITY() as 'id';  
                                 end;";
 
@@ -78,7 +78,7 @@ namespace Повышение_квалификации
 	                                  values ({0},'{1}','{2}',0,{3}); 
 	                                  set @id = (SELECT SCOPE_IDENTITY());
   
-	                                  update [silverha_fkd6q].[dbo].[Обучение]
+	                                  update Обучение
 	                                  set registrationNumber = @id+1000
                                       where id = @id;
                                   end;";
