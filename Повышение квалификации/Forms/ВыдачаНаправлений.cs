@@ -46,28 +46,35 @@ namespace Повышение_квалификации
 
 		private void button2_Click(object sender, EventArgs e)
 		{
-			int index = dataGridView1.CurrentRow.Index;
+			if (dataGridView1.CurrentRow != null)
+			{
+				int index = dataGridView1.CurrentRow.Index;
 
-			MakeApproval(dataGridView1[0, index].Value.ToString());
+				MakeApproval(dataGridView1[0, index].Value.ToString());
 
-			string query = @"update Обучение
+				string query = @"update Обучение
 							set coursePassed = 1
 							where id = {0};";
-			DbWorker dbWorker = new DbWorker();
+				DbWorker dbWorker = new DbWorker();
 
-			using (SqlConnection connection = dbWorker.GetConnection())
-			using (SqlCommand command = new SqlCommand())
-			{
-				command.Connection = connection;
-				command.CommandText = string.Format(query, dataGridView1[0, index].Value.ToString());
-				connection.Open();
-				command.ExecuteNonQuery();
-				connection.Close();
+				using (SqlConnection connection = dbWorker.GetConnection())
+				using (SqlCommand command = new SqlCommand())
+				{
+					command.Connection = connection;
+					command.CommandText = string.Format(query, dataGridView1[0, index].Value.ToString());
+					connection.Open();
+					command.ExecuteNonQuery();
+					connection.Close();
+				}
+
+				dataGridView1.Refresh();
+				this.courseNotPassedViewTableAdapter.Fill(this.coursesDataSet.CourseNotPassedView);
+				MessageBox.Show("Курс одобрен");
 			}
-
-			dataGridView1.Refresh();
-			this.courseNotPassedViewTableAdapter.Fill(this.coursesDataSet.CourseNotPassedView);
-            MessageBox.Show("Курс одобрен");
+			else
+			{
+				MessageBox.Show("Курс не выбран");
+			}			
 		}
 
 		private void button3_Click(object sender, EventArgs e)

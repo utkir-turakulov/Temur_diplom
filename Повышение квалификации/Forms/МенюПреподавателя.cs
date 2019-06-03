@@ -54,24 +54,31 @@ namespace Повышение_квалификации
 
 		private void button2_Click_1(object sender, EventArgs e)
 		{
-			int index = dataGridView1.CurrentRow.Index;
-			string query = @"insert Обучение(teacherId,coursId,coursePassed)
-							values({0},{1},0);";
-			DbWorker dbWorker = new DbWorker();
-
-			using (SqlConnection connection = dbWorker.GetConnection())
-			using (SqlCommand command = new SqlCommand())
+			if (dataGridView1.CurrentRow != null)
 			{
-				command.Connection = connection;
-				command.CommandText = string.Format(query,_user.UserId,dataGridView1[0,index].Value.ToString());
-				connection.Open();
-				command.ExecuteNonQuery();
-				connection.Close();
-			}
+				int index = dataGridView1.CurrentRow.Index;
+				string query = @"insert Обучение(teacherId,coursId,coursePassed)
+							values({0},{1},0);";
+				DbWorker dbWorker = new DbWorker();
 
-			dataGridView1.Rows.Clear();
-			FillDataGrid();
-            MessageBox.Show("Курс выбран");
+				using (SqlConnection connection = dbWorker.GetConnection())
+				using (SqlCommand command = new SqlCommand())
+				{
+					command.Connection = connection;
+					command.CommandText = string.Format(query, _user.UserId, dataGridView1[0, index].Value.ToString());
+					connection.Open();
+					command.ExecuteNonQuery();
+					connection.Close();
+				}
+
+				dataGridView1.Rows.Clear();
+				FillDataGrid();
+				MessageBox.Show("Курс выбран");
+			}
+			else
+			{
+				MessageBox.Show("Курс не выбран");
+			}			
 		}
 
 		private void FillDataGrid()
