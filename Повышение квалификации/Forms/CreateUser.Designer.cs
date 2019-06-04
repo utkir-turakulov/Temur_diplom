@@ -50,6 +50,10 @@
 			this.radioButton5 = new System.Windows.Forms.RadioButton();
 			this.radioButton1 = new System.Windows.Forms.RadioButton();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.coursesDataSet = new Повышение_квалификации.CoursesDataSet();
+			this.label1 = new System.Windows.Forms.Label();
+			this.userData1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.userDataTableAdapter = new Повышение_квалификации.CoursesDataSetTableAdapters.UserDataTableAdapter();
 			this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.midleNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,13 +62,9 @@
 			this.loginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.roleNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.userDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.coursesDataSet = new Повышение_квалификации.CoursesDataSet();
-			this.userDataTableAdapter = new Повышение_квалификации.CoursesDataSetTableAdapters.UserDataTableAdapter();
-			this.label1 = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.userDataBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.coursesDataSet)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.userData1BindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// button1
@@ -288,12 +288,37 @@
             this.loginDataGridViewTextBoxColumn,
             this.passwordDataGridViewTextBoxColumn,
             this.roleNameDataGridViewTextBoxColumn});
-			this.dataGridView1.DataSource = this.userDataBindingSource;
+			this.dataGridView1.DataSource = this.userData1BindingSource;
 			this.dataGridView1.Location = new System.Drawing.Point(369, 86);
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.ReadOnly = true;
 			this.dataGridView1.Size = new System.Drawing.Size(851, 663);
 			this.dataGridView1.TabIndex = 47;
+			// 
+			// coursesDataSet
+			// 
+			this.coursesDataSet.DataSetName = "CoursesDataSet";
+			this.coursesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.BackColor = System.Drawing.Color.Transparent;
+			this.label1.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.label1.Location = new System.Drawing.Point(657, 31);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(267, 30);
+			this.label1.TabIndex = 48;
+			this.label1.Text = "Таблица пользователей";
+			// 
+			// userData1BindingSource
+			// 
+			this.userData1BindingSource.DataMember = "UserData1";
+			this.userData1BindingSource.DataSource = this.coursesDataSet;
+			// 
+			// userDataTableAdapter
+			// 
+			this.userDataTableAdapter.ClearBeforeFill = true;
 			// 
 			// idDataGridViewTextBoxColumn
 			// 
@@ -351,31 +376,6 @@
 			this.roleNameDataGridViewTextBoxColumn.Name = "roleNameDataGridViewTextBoxColumn";
 			this.roleNameDataGridViewTextBoxColumn.ReadOnly = true;
 			// 
-			// userDataBindingSource
-			// 
-			this.userDataBindingSource.DataMember = "UserData";
-			this.userDataBindingSource.DataSource = this.coursesDataSet;
-			// 
-			// coursesDataSet
-			// 
-			this.coursesDataSet.DataSetName = "CoursesDataSet";
-			this.coursesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-			// 
-			// userDataTableAdapter
-			// 
-			this.userDataTableAdapter.ClearBeforeFill = true;
-			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.BackColor = System.Drawing.Color.Transparent;
-			this.label1.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.label1.Location = new System.Drawing.Point(657, 31);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(267, 30);
-			this.label1.TabIndex = 48;
-			this.label1.Text = "Таблица пользователей";
-			// 
 			// CreateUser
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -411,8 +411,8 @@
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormClosingEvent);
 			this.Load += new System.EventHandler(this.CreateUser_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.userDataBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.coursesDataSet)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.userData1BindingSource)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -442,7 +442,8 @@
 		private System.Windows.Forms.RadioButton radioButton1;
 		private System.Windows.Forms.DataGridView dataGridView1;
 		private CoursesDataSet coursesDataSet;
-		private System.Windows.Forms.BindingSource userDataBindingSource;
+        private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.BindingSource userData1BindingSource;
 		private CoursesDataSetTableAdapters.UserDataTableAdapter userDataTableAdapter;
 		private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
@@ -452,6 +453,5 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn loginDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn roleNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Label label1;
-    }
+	}
 }

@@ -33,10 +33,20 @@ namespace Повышение_квалификации
 
 		private void ОдобритьКурс_Load(object sender, EventArgs e)
 		{
+			// TODO: данная строка кода позволяет загрузить данные в таблицу "coursesDataSet.CoursesView1". При необходимости она может быть перемещена или удалена.
+			this.coursesViewTableAdapter.Fill(this.coursesDataSet.CoursesView1);
+			// TODO: данная строка кода позволяет загрузить данные в таблицу "coursesDataSet.CourseNotPassedView". При необходимости она может быть перемещена или удалена.
+			this.courseNotPassedViewTableAdapter.Fill(this.coursesDataSet.CourseNotPassedView);
+			// TODO: данная строка кода позволяет загрузить данные в таблицу "coursesDataSet.CoursesView1". При необходимости она может быть перемещена или удалена.
+			//this.coursesViewTableAdapter.Fill(this.coursesDataSet.CoursesView1);
+			// TODO: данная строка кода позволяет загрузить данные в таблицу "coursesDataSet.CourseNotPassedView". При необходимости она может быть перемещена или удалена.
+			this.courseNotPassedViewTableAdapter.Fill(this.coursesDataSet.CourseNotPassedView);
+			// TODO: данная строка кода позволяет загрузить данные в таблицу "coursesDataSet.CourseNotPassedView1". При необходимости она может быть перемещена или удалена.
+			this.courseNotPassedViewTableAdapter.Fill(this.coursesDataSet.CourseNotPassedView);
 			// TODO: данная строка кода позволяет загрузить данные в таблицу "coursesDataSet.TeachersView". При необходимости она может быть перемещена или удалена.
 			this.teachersViewTableAdapter.Fill(this.coursesDataSet.TeachersView);
 			// TODO: данная строка кода позволяет загрузить данные в таблицу "coursesDataSet.CoursesView". При необходимости она может быть перемещена или удалена.
-			this.coursesViewTableAdapter.Fill(this.coursesDataSet.CoursesView);
+			//this.coursesViewTableAdapter.Fill(this.coursesDataSet.CoursesView1);
 			// TODO: данная строка кода позволяет загрузить данные в таблицу "coursesDataSet.CourseNotPassedView". При необходимости она может быть перемещена или удалена.
 			this.courseNotPassedViewTableAdapter.Fill(this.coursesDataSet.CourseNotPassedView);
 			// TODO: данная строка кода позволяет загрузить данные в таблицу "coursesDataSet.CourseNotPassedView". При необходимости она может быть перемещена или удалена.
@@ -50,26 +60,29 @@ namespace Повышение_квалификации
 			{
 				int index = dataGridView1.CurrentRow.Index;
 
-				MakeApproval(dataGridView1[0, index].Value.ToString());
+				bool created = MakeApproval(dataGridView1[0, index].Value.ToString());
 
-				string query = @"update Обучение
+				if (created)
+				{
+					string query = @"update Обучение
 							set coursePassed = 1
 							where id = {0};";
-				DbWorker dbWorker = new DbWorker();
+					DbWorker dbWorker = new DbWorker();
 
-				using (SqlConnection connection = dbWorker.GetConnection())
-				using (SqlCommand command = new SqlCommand())
-				{
-					command.Connection = connection;
-					command.CommandText = string.Format(query, dataGridView1[0, index].Value.ToString());
-					connection.Open();
-					command.ExecuteNonQuery();
-					connection.Close();
-				}
+					using (SqlConnection connection = dbWorker.GetConnection())
+					using (SqlCommand command = new SqlCommand())
+					{
+						command.Connection = connection;
+						command.CommandText = string.Format(query, dataGridView1[0, index].Value.ToString());
+						connection.Open();
+						command.ExecuteNonQuery();
+						connection.Close();
+					}
 
-				dataGridView1.Refresh();
-				this.courseNotPassedViewTableAdapter.Fill(this.coursesDataSet.CourseNotPassedView);
-				MessageBox.Show("Курс одобрен");
+					dataGridView1.Refresh();
+					this.courseNotPassedViewTableAdapter.Fill(this.coursesDataSet.CourseNotPassedView);
+					MessageBox.Show("Курс одобрен");
+				}				
 			}
 			else
 			{
@@ -100,20 +113,23 @@ namespace Повышение_квалификации
 				return;
 			}
 
-			using (SqlConnection connection = dbWorker.GetConnection())
-			using (SqlCommand command = new SqlCommand())
-			{
-				command.Connection = connection;
-				command.CommandText = string.Format(query, dataGridView2[0, teacherIndex].Value.ToString(), dataGridView3[0, courseIndex].Value.ToString());
-				connection.Open();
-				command.ExecuteNonQuery();
-				connection.Close();
-			}
+			bool created = MakeTemplate(dataGridView3[0, courseIndex].Value.ToString(), dataGridView2[0, teacherIndex].Value.ToString());
 
-			MakeTemplate(dataGridView3[0, courseIndex].Value.ToString(), dataGridView2[0, teacherIndex].Value.ToString());
+			if (created)
+			{
+				using (SqlConnection connection = dbWorker.GetConnection())
+				using (SqlCommand command = new SqlCommand())
+				{
+					command.Connection = connection;
+					command.CommandText = string.Format(query, dataGridView2[0, teacherIndex].Value.ToString(), dataGridView3[0, courseIndex].Value.ToString());
+					connection.Open();
+					command.ExecuteNonQuery();
+					connection.Close();
+				}
+			}			
 		}
 
-		public void MakeTemplate(string courseIndex, string teacherIndex)
+		public bool MakeTemplate(string courseIndex, string teacherIndex)
 		{
 			Templater templater = new Templater();
 			try
@@ -131,7 +147,7 @@ namespace Повышение_квалификации
 					folderBrowser.CheckFileExists = false;
 					folderBrowser.CheckPathExists = true;
 					// Always default to Folder Selection.
-					folderBrowser.FileName = $"Отчёт_{education.Id}.docx";
+					folderBrowser.FileName = $"Направление_№-{education.Id}.docx";
 					if (folderBrowser.ShowDialog() == DialogResult.OK)
 					{
 						selectedPath = folderBrowser.FileName;
@@ -139,20 +155,23 @@ namespace Повышение_квалификации
 
 					templater.CourseReferral(selectedPath, education.Id, "Napravlenie_na_prokhozhdenie_kursa.docx");//"\\Documents\\Направление на прохождение курса.docx"
 					MessageBox.Show("Справка сформирована!");
+					return true;
 				}
 				else
 				{
 					MessageBox.Show("Данные не найдены");
+					return false;
 				}
 				
 			}
 			catch (Exception ex)
 			{
 				MessageBox.Show("Справка не сформирована");
+				return false;
 			}
 		}
 
-		public void MakeApproval(string educationId)
+		public bool MakeApproval(string educationId)
 		{
 			Templater templater = new Templater();
 			try
@@ -169,7 +188,7 @@ namespace Повышение_квалификации
 					folderBrowser.CheckFileExists = false;
 					folderBrowser.CheckPathExists = true;
 					// Always default to Folder Selection.
-					folderBrowser.FileName = $"Отчёт_{educationId}.docx";
+					folderBrowser.FileName = $"Одобрение_курса_№-{educationId}.docx";
 					if (folderBrowser.ShowDialog() == DialogResult.OK)
 					{
 						selectedPath = folderBrowser.FileName;
@@ -177,16 +196,19 @@ namespace Повышение_квалификации
 
 					templater.CourseReferral(selectedPath, educationId, "odobrenie_kursa.docx");//"\\Documents\\Направление на прохождение курса.docx"
 					MessageBox.Show("Справка сформирована!");
+					return true;
 				}
 				else
-				{
+				{ 
 					MessageBox.Show("Данные не найдены");
+					return false;
 				}
 
 			}
 			catch (Exception ex)
 			{
 				MessageBox.Show("Справка не сформирована");
+				return false;
 			}
 		}
 

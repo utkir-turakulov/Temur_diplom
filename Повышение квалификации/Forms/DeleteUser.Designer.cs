@@ -40,7 +40,7 @@
 			this.loginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.roleNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.userDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.userData1BindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.coursesDataSet = new Повышение_квалификации.CoursesDataSet();
 			this.firstName = new System.Windows.Forms.TextBox();
 			this.midleName = new System.Windows.Forms.TextBox();
@@ -55,17 +55,17 @@
 			this.label11 = new System.Windows.Forms.Label();
 			this.label12 = new System.Windows.Forms.Label();
 			this.role = new System.Windows.Forms.ComboBox();
-			this.ролиBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.button3 = new System.Windows.Forms.Button();
 			this.dateOfBirth = new System.Windows.Forms.DateTimePicker();
-			this.userDataTableAdapter = new Повышение_квалификации.CoursesDataSetTableAdapters.UserDataTableAdapter();
 			this.label1 = new System.Windows.Forms.Label();
-			this.ролиTableAdapter = new Повышение_квалификации.CoursesDataSetTableAdapters.РолиTableAdapter();
 			this.label2 = new System.Windows.Forms.Label();
+			this.userDataTableAdapter = new Повышение_квалификации.CoursesDataSetTableAdapters.UserDataTableAdapter();
+			this.роли1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.ролиTableAdapter = new Повышение_квалификации.CoursesDataSetTableAdapters.РолиTableAdapter();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.userDataBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.userData1BindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.coursesDataSet)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.ролиBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.роли1BindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// button1
@@ -106,7 +106,7 @@
             this.loginDataGridViewTextBoxColumn,
             this.passwordDataGridViewTextBoxColumn,
             this.roleNameDataGridViewTextBoxColumn});
-			this.dataGridView2.DataSource = this.userDataBindingSource;
+			this.dataGridView2.DataSource = this.userData1BindingSource;
 			this.dataGridView2.Location = new System.Drawing.Point(376, 77);
 			this.dataGridView2.Name = "dataGridView2";
 			this.dataGridView2.ReadOnly = true;
@@ -171,10 +171,10 @@
 			this.roleNameDataGridViewTextBoxColumn.Name = "roleNameDataGridViewTextBoxColumn";
 			this.roleNameDataGridViewTextBoxColumn.ReadOnly = true;
 			// 
-			// userDataBindingSource
+			// userData1BindingSource
 			// 
-			this.userDataBindingSource.DataMember = "UserData";
-			this.userDataBindingSource.DataSource = this.coursesDataSet;
+			this.userData1BindingSource.DataMember = "UserData1";
+			this.userData1BindingSource.DataSource = this.coursesDataSet;
 			// 
 			// coursesDataSet
 			// 
@@ -295,7 +295,7 @@
 			// 
 			// role
 			// 
-			this.role.DataSource = this.ролиBindingSource;
+			this.role.DataSource = this.роли1BindingSource;
 			this.role.DisplayMember = "roleName";
 			this.role.FormattingEnabled = true;
 			this.role.Location = new System.Drawing.Point(180, 359);
@@ -303,11 +303,6 @@
 			this.role.Size = new System.Drawing.Size(164, 21);
 			this.role.TabIndex = 23;
 			this.role.ValueMember = "id";
-			// 
-			// ролиBindingSource
-			// 
-			this.ролиBindingSource.DataMember = "Роли";
-			this.ролиBindingSource.DataSource = this.coursesDataSet;
 			// 
 			// button3
 			// 
@@ -329,10 +324,6 @@
 			this.dateOfBirth.Size = new System.Drawing.Size(140, 20);
 			this.dateOfBirth.TabIndex = 26;
 			// 
-			// userDataTableAdapter
-			// 
-			this.userDataTableAdapter.ClearBeforeFill = true;
-			// 
 			// label1
 			// 
 			this.label1.AutoSize = true;
@@ -344,10 +335,6 @@
 			this.label1.TabIndex = 27;
 			this.label1.Text = "Редактирование пользователя";
 			// 
-			// ролиTableAdapter
-			// 
-			this.ролиTableAdapter.ClearBeforeFill = true;
-			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
@@ -358,6 +345,19 @@
 			this.label2.Size = new System.Drawing.Size(267, 30);
 			this.label2.TabIndex = 28;
 			this.label2.Text = "Таблица пользователей";
+			// 
+			// userDataTableAdapter
+			// 
+			this.userDataTableAdapter.ClearBeforeFill = true;
+			// 
+			// роли1BindingSource
+			// 
+			this.роли1BindingSource.DataMember = "Роли1";
+			this.роли1BindingSource.DataSource = this.coursesDataSet;
+			// 
+			// ролиTableAdapter
+			// 
+			this.ролиTableAdapter.ClearBeforeFill = true;
 			// 
 			// DeleteUser
 			// 
@@ -392,9 +392,9 @@
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DeleteUser_FormClosing);
 			this.Load += new System.EventHandler(this.DeleteUser_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.userDataBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.userData1BindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.coursesDataSet)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.ролиBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.роли1BindingSource)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -423,7 +423,9 @@
 		private System.Windows.Forms.ComboBox role;
 		private System.Windows.Forms.Button button3;
 		private System.Windows.Forms.DateTimePicker dateOfBirth;
-		private System.Windows.Forms.BindingSource userDataBindingSource;
+		private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.BindingSource userData1BindingSource;
 		private CoursesDataSetTableAdapters.UserDataTableAdapter userDataTableAdapter;
 		private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
@@ -433,9 +435,7 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn loginDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn roleNameDataGridViewTextBoxColumn;
-		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.BindingSource ролиBindingSource;
+		private System.Windows.Forms.BindingSource роли1BindingSource;
 		private CoursesDataSetTableAdapters.РолиTableAdapter ролиTableAdapter;
-        private System.Windows.Forms.Label label2;
-    }
+	}
 }

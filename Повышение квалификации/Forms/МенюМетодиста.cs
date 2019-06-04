@@ -26,14 +26,16 @@ namespace Повышение_квалификации
 
 		private void МенюМетодиста_Load(object sender, EventArgs e)
 		{
+			// TODO: данная строка кода позволяет загрузить данные в таблицу "coursesDataSet1.CoursesView1". При необходимости она может быть перемещена или удалена.
+			this.coursesViewTableAdapter.Fill(this.coursesDataSet1.CoursesView1);
 			// TODO: данная строка кода позволяет загрузить данные в таблицу "coursesDataSet.Курсы". При необходимости она может быть перемещена или удалена.
-			this.курсыTableAdapter.Fill(this.coursesDataSet.Курсы);
+			//this.курсыTableAdapter.Fill(this.coursesDataSet.Курсы);
 			// TODO: данная строка кода позволяет загрузить данные в таблицу "coursesDataSet1.ФормаОбучения". При необходимости она может быть перемещена или удалена.
-			this.формаОбученияTableAdapter.Fill(this.coursesDataSet1.ФормаОбучения);
+			//this.формаОбученияTableAdapter.Fill(this.coursesDataSet1.ФормаОбучения);
 			// TODO: данная строка кода позволяет загрузить данные в таблицу "coursesDataSet1.ВидКурса". При необходимости она может быть перемещена или удалена.
-			this.видКурсаTableAdapter.Fill(this.coursesDataSet1.ВидКурса);
+			//this.видКурсаTableAdapter.Fill(this.coursesDataSet1.ВидКурса);
 			// TODO: данная строка кода позволяет загрузить данные в таблицу "coursesDataSet.CoursesView". При необходимости она может быть перемещена или удалена.
-			this.coursesViewTableAdapter.Fill(this.coursesDataSet.CoursesView);
+			//this.coursesViewTableAdapter.Fill(this.coursesDataSet.CoursesView);
 		}
 
 		private void textBox1_TextChanged(object sender, EventArgs e)
@@ -134,9 +136,13 @@ namespace Повышение_квалификации
 					default:
 						break;
 				}
-
 				coursFormId = Convert.ToInt32(educationFormList.SelectedValue.ToString());
 				//courseVolume = Convert.ToInt32(textBox2.Text);
+
+				//coursTypeList.SelectedValue.
+				//!string.IsNullOrWhiteSpace(educationFormList.SelectedValue.ToString()) &&
+				textBox2.Clear();
+				textBox2.Clear();
 			}
 			else
 			{
@@ -145,7 +151,7 @@ namespace Повышение_квалификации
 			}
 
 			dbWorker.AddCours(textBox1.Text, coursTypeId, courseVolume, coursFormId, dateTimePicker1.Value, dateTimePicker2.Value);
-			this.coursesViewTableAdapter.Fill(this.coursesDataSet.CoursesView);
+			this.coursesViewTableAdapter.Fill(this.coursesDataSet.CoursesView1);
 		}
 
 		private void button3_Click(object sender, EventArgs e)
@@ -226,7 +232,7 @@ namespace Повышение_квалификации
 				}
 
 				dbWorker.UpdateCourses(dataGridView1, textBox1.Text, coursTypeId, courseVolume, coursFormId, dateTimePicker1.Value, dateTimePicker2.Value);
-				this.coursesViewTableAdapter.Fill(this.coursesDataSet.CoursesView);
+				this.coursesViewTableAdapter.Fill(this.coursesDataSet.CoursesView1);
 			}
 		}
 
@@ -241,7 +247,7 @@ namespace Повышение_квалификации
 
 				dbWorker.ExecQuery(string.Format("Delete from Курсы where id={0}", dataGridView1[0, index].Value.ToString()));
 				dataGridView1.Refresh();
-				this.coursesViewTableAdapter.Fill(this.coursesDataSet.CoursesView);
+				this.coursesViewTableAdapter.Fill(this.coursesDataSet.CoursesView1);
 			}
 		}
 

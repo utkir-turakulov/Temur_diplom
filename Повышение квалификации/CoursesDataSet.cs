@@ -9,3 +9,12 @@
 		}
 	}
 }
+
+namespace Повышение_квалификации.CoursesDataSetTableAdapters
+{
+
+
+	public partial class АвторизацияTableAdapter
+	{
+	}
+}

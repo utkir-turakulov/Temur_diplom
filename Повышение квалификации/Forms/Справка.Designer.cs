@@ -41,22 +41,26 @@
 			this.label4 = new System.Windows.Forms.Label();
 			this.tabPage5 = new System.Windows.Forms.TabPage();
 			this.tabPage6 = new System.Windows.Forms.TabPage();
+			this.label5 = new System.Windows.Forms.Label();
+			this.label6 = new System.Windows.Forms.Label();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.tabPage2.SuspendLayout();
 			this.tabPage3.SuspendLayout();
 			this.tabPage4.SuspendLayout();
+			this.tabPage5.SuspendLayout();
+			this.tabPage6.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// label1
 			// 
 			this.label1.AutoSize = true;
 			this.label1.BackColor = System.Drawing.SystemColors.InactiveCaption;
-			this.label1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.label1.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
-			this.label1.Location = new System.Drawing.Point(6, 16);
+			this.label1.Location = new System.Drawing.Point(17, 16);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(544, 299);
+			this.label1.Size = new System.Drawing.Size(540, 273);
 			this.label1.TabIndex = 0;
 			this.label1.Text = resources.GetString("label1.Text");
 			this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -64,7 +68,7 @@
 			// button1
 			// 
 			this.button1.BackgroundImage = global::Повышение_квалификации.Properties.Resources.Untitled_5;
-			this.button1.Location = new System.Drawing.Point(237, 374);
+			this.button1.Location = new System.Drawing.Point(246, 385);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(71, 71);
 			this.button1.TabIndex = 3;
@@ -79,10 +83,10 @@
 			this.tabControl1.Controls.Add(this.tabPage4);
 			this.tabControl1.Controls.Add(this.tabPage5);
 			this.tabControl1.Controls.Add(this.tabPage6);
-			this.tabControl1.Location = new System.Drawing.Point(12, 12);
+			this.tabControl1.Location = new System.Drawing.Point(4, 12);
 			this.tabControl1.Name = "tabControl1";
 			this.tabControl1.SelectedIndex = 0;
-			this.tabControl1.Size = new System.Drawing.Size(560, 342);
+			this.tabControl1.Size = new System.Drawing.Size(568, 365);
 			this.tabControl1.TabIndex = 4;
 			// 
 			// tabPage1
@@ -92,7 +96,7 @@
 			this.tabPage1.Location = new System.Drawing.Point(4, 22);
 			this.tabPage1.Name = "tabPage1";
 			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage1.Size = new System.Drawing.Size(552, 316);
+			this.tabPage1.Size = new System.Drawing.Size(560, 339);
 			this.tabPage1.TabIndex = 0;
 			this.tabPage1.Text = "О приложении";
 			this.tabPage1.UseVisualStyleBackColor = true;
@@ -104,7 +108,7 @@
 			this.tabPage2.Location = new System.Drawing.Point(4, 22);
 			this.tabPage2.Name = "tabPage2";
 			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage2.Size = new System.Drawing.Size(552, 316);
+			this.tabPage2.Size = new System.Drawing.Size(560, 339);
 			this.tabPage2.TabIndex = 1;
 			this.tabPage2.Text = "Авторизация";
 			this.tabPage2.UseVisualStyleBackColor = true;
@@ -113,11 +117,11 @@
 			// 
 			this.label2.AutoSize = true;
 			this.label2.BackColor = System.Drawing.SystemColors.InactiveCaption;
-			this.label2.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.label2.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.label2.Image = ((System.Drawing.Image)(resources.GetObject("label2.Image")));
-			this.label2.Location = new System.Drawing.Point(8, 19);
+			this.label2.Location = new System.Drawing.Point(17, 20);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(538, 253);
+			this.label2.Size = new System.Drawing.Size(536, 231);
 			this.label2.TabIndex = 1;
 			this.label2.Text = resources.GetString("label2.Text");
 			// 
@@ -127,7 +131,7 @@
 			this.tabPage3.Controls.Add(this.label3);
 			this.tabPage3.Location = new System.Drawing.Point(4, 22);
 			this.tabPage3.Name = "tabPage3";
-			this.tabPage3.Size = new System.Drawing.Size(552, 316);
+			this.tabPage3.Size = new System.Drawing.Size(560, 339);
 			this.tabPage3.TabIndex = 2;
 			this.tabPage3.Text = "Преподаватель";
 			this.tabPage3.UseVisualStyleBackColor = true;
@@ -136,11 +140,11 @@
 			// 
 			this.label3.AutoSize = true;
 			this.label3.BackColor = System.Drawing.SystemColors.InactiveCaption;
-			this.label3.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.label3.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.label3.Image = ((System.Drawing.Image)(resources.GetObject("label3.Image")));
-			this.label3.Location = new System.Drawing.Point(11, 12);
+			this.label3.Location = new System.Drawing.Point(19, 22);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(538, 69);
+			this.label3.Size = new System.Drawing.Size(535, 63);
 			this.label3.TabIndex = 2;
 			this.label3.Text = "Пользователь преподаватель может выбрать курс.\r\nДля того чтобы выбрать курс, необ" +
     "ходимо выбрать курс из таблицы\r\nи нажать на это поле, после нажать на кнопку выб" +
@@ -152,7 +156,7 @@
 			this.tabPage4.Controls.Add(this.label4);
 			this.tabPage4.Location = new System.Drawing.Point(4, 22);
 			this.tabPage4.Name = "tabPage4";
-			this.tabPage4.Size = new System.Drawing.Size(552, 316);
+			this.tabPage4.Size = new System.Drawing.Size(560, 339);
 			this.tabPage4.TabIndex = 3;
 			this.tabPage4.Text = "Методист";
 			this.tabPage4.UseVisualStyleBackColor = true;
@@ -161,22 +165,22 @@
 			// 
 			this.label4.AutoSize = true;
 			this.label4.BackColor = System.Drawing.SystemColors.InactiveCaption;
-			this.label4.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.label4.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.label4.Image = ((System.Drawing.Image)(resources.GetObject("label4.Image")));
-			this.label4.Location = new System.Drawing.Point(3, 19);
+			this.label4.Location = new System.Drawing.Point(15, 14);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(538, 69);
+			this.label4.Size = new System.Drawing.Size(535, 315);
 			this.label4.TabIndex = 3;
-			this.label4.Text = "Пользователь преподаватель может выбрать курс.\r\nДля того чтобы выбрать курс, необ" +
-    "ходимо выбрать курс из таблицы\r\nи нажать на это поле, после нажать на кнопку выб" +
-    "рать курс.";
+			this.label4.Text = resources.GetString("label4.Text");
+			this.label4.Click += new System.EventHandler(this.label4_Click);
 			// 
 			// tabPage5
 			// 
 			this.tabPage5.BackgroundImage = global::Повышение_квалификации.Properties.Resources.фон;
+			this.tabPage5.Controls.Add(this.label5);
 			this.tabPage5.Location = new System.Drawing.Point(4, 22);
 			this.tabPage5.Name = "tabPage5";
-			this.tabPage5.Size = new System.Drawing.Size(552, 316);
+			this.tabPage5.Size = new System.Drawing.Size(560, 339);
 			this.tabPage5.TabIndex = 4;
 			this.tabPage5.Text = "Кадровик";
 			this.tabPage5.UseVisualStyleBackColor = true;
@@ -184,12 +188,37 @@
 			// tabPage6
 			// 
 			this.tabPage6.BackgroundImage = global::Повышение_квалификации.Properties.Resources.фон;
+			this.tabPage6.Controls.Add(this.label6);
 			this.tabPage6.Location = new System.Drawing.Point(4, 22);
 			this.tabPage6.Name = "tabPage6";
-			this.tabPage6.Size = new System.Drawing.Size(552, 316);
+			this.tabPage6.Size = new System.Drawing.Size(560, 339);
 			this.tabPage6.TabIndex = 5;
 			this.tabPage6.Text = "Администратор";
 			this.tabPage6.UseVisualStyleBackColor = true;
+			// 
+			// label5
+			// 
+			this.label5.AutoSize = true;
+			this.label5.BackColor = System.Drawing.SystemColors.InactiveCaption;
+			this.label5.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.label5.Image = ((System.Drawing.Image)(resources.GetObject("label5.Image")));
+			this.label5.Location = new System.Drawing.Point(14, 14);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(530, 357);
+			this.label5.TabIndex = 4;
+			this.label5.Text = resources.GetString("label5.Text");
+			// 
+			// label6
+			// 
+			this.label6.AutoSize = true;
+			this.label6.BackColor = System.Drawing.SystemColors.InactiveCaption;
+			this.label6.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.label6.Image = ((System.Drawing.Image)(resources.GetObject("label6.Image")));
+			this.label6.Location = new System.Drawing.Point(13, 12);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(544, 336);
+			this.label6.TabIndex = 4;
+			this.label6.Text = resources.GetString("label6.Text");
 			// 
 			// Справка
 			// 
@@ -216,6 +245,10 @@
 			this.tabPage3.PerformLayout();
 			this.tabPage4.ResumeLayout(false);
 			this.tabPage4.PerformLayout();
+			this.tabPage5.ResumeLayout(false);
+			this.tabPage5.PerformLayout();
+			this.tabPage6.ResumeLayout(false);
+			this.tabPage6.PerformLayout();
 			this.ResumeLayout(false);
 
         }
@@ -234,5 +267,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-    }
+		private System.Windows.Forms.Label label5;
+		private System.Windows.Forms.Label label6;
+	}
 }

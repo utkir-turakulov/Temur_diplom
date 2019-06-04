@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace Повышение_квалификации
@@ -6,12 +8,16 @@ namespace Повышение_квалификации
 	public partial class СформироватьОтчет : Form
     {
         МенюКадровика _menu = null;
+		delegate string Filter(string firstName, string lastName, string middleName,string courseVolume);
+		Filter filter = null;
 
         public СформироватьОтчет(МенюКадровика menu)
         {
             _menu = menu;
             InitializeComponent();
             this.dataGridView1.MultiSelect = true;
+
+			
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -34,7 +40,7 @@ namespace Повышение_квалификации
 					folderBrowser.ValidateNames = false;
 					folderBrowser.CheckFileExists = false;
 					folderBrowser.CheckPathExists = true;
-					folderBrowser.FileName = $"Отчёт_{educationId}_{id}.docx";
+					folderBrowser.FileName = $"Справка_№-{educationId}.docx";
 					if (folderBrowser.ShowDialog() == DialogResult.OK)
 					{
 						selectedPath = folderBrowser.FileName;
@@ -53,17 +59,180 @@ namespace Повышение_квалификации
             {
                 MessageBox.Show("Справка не сформирована");
             }
-        }
+			dataGridView1.Rows.Clear();
+			FillDataGridWithFilter();
+
+		}
 
         private void СформироватьОтчет_Load(object sender, EventArgs e)
         {
-			// TODO: данная строка кода позволяет загрузить данные в таблицу "coursesDataSet.CoursePassedView". При необходимости она может быть перемещена или удалена.
-			this.coursePassedViewTableAdapter.Fill(this.coursesDataSet.CoursePassedView);
-			// TODO: данная строка кода позволяет загрузить данные в таблицу "coursesDataSet.CoursePassedView". При необходимости она может быть перемещена или удалена.
-			this.coursePassedViewTableAdapter.Fill(this.coursesDataSet.CoursePassedView);
-			// TODO: данная строка кода позволяет загрузить данные в таблицу "silverHa.Sertificates". При необходимости она может быть перемещена или удалена.
-			//   this.sertificatesTableAdapter.Fill(this.silverHa.Sertificates);
+			// TODO: данная строка кода позволяет загрузить данные в таблицу "coursesDataSet.CoursePassedView1". При необходимости она может быть перемещена или удалена.
+			//this.coursePassedViewTableAdapter.Fill(this.coursesDataSet.CoursePassedView1);
 
+			FillDataGridWithFilter();
+
+		}
+
+		private void FillDataGrid()
+		{
+			string query = @"select COLUMN_NAME
+							from INFORMATION_SCHEMA.COLUMNS
+							where TABLE_NAME = 'CoursePassedView'; ";
+
+			string coursesQuery = @"
+								select * 
+								from CoursePassedView ";
+
+			DbWorker dbWorker = new DbWorker();
+			List<string> columns = new List<string>();
+
+			using (SqlConnection connection = dbWorker.GetConnection())
+			using (SqlCommand command = new SqlCommand())
+			{
+				command.Connection = connection;
+				command.CommandText = query;
+				connection.Open();
+				SqlDataReader reader = command.ExecuteReader();
+				while (reader.Read())
+				{
+					columns.Add(reader.GetString(0));
+				}
+				connection.Close();
+			}
+
+			dataGridView1.ColumnCount = columns.Count;
+			dataGridView1.ColumnHeadersVisible = true;
+
+			for (int i = 0; i < columns.Count; i++)
+			{
+				dataGridView1.Columns[i].Name = columns[i];
+			}
+
+			dataGridView1.Rows.Clear();
+			using (SqlConnection connection = dbWorker.GetConnection())
+			using (SqlCommand command = new SqlCommand())
+			{
+				command.Connection = connection;
+				command.CommandText = coursesQuery;
+				connection.Open();
+				SqlDataReader reader = command.ExecuteReader();
+				while (reader.Read())
+				{
+					dataGridView1.Rows.Add(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4),reader.GetDateTime(5), reader.GetDateTime(6), reader.GetInt32(7));
+				}
+				connection.Close();
+			}
+
+		}
+
+		private void FillDataGridWithFilter()
+		{
+			dataGridView1.Rows.Clear();
+
+			string query = @"select COLUMN_NAME
+							from INFORMATION_SCHEMA.COLUMNS
+							where TABLE_NAME = 'CoursePassedView'; ";
+
+			string coursesQuery = @"select * from CoursePassedView ";
+			int filterParamCount = 0;
+
+			if (!string.IsNullOrEmpty(firstName.Text) &&
+				!string.IsNullOrWhiteSpace(firstName.Text) ||
+				!string.IsNullOrEmpty(midleName.Text) &&
+				!string.IsNullOrWhiteSpace(midleName.Text) ||
+				!string.IsNullOrEmpty(lastName.Text) &&
+				!string.IsNullOrWhiteSpace(lastName.Text) ||
+				!string.IsNullOrEmpty(courseVolume.Text) &&
+				!string.IsNullOrWhiteSpace(courseVolume.Text)
+				)
+			{
+				coursesQuery += " where ";
+				filterParamCount++;
+			}
+
+
+			if (!string.IsNullOrEmpty(firstName.Text) && 
+				!string.IsNullOrWhiteSpace(firstName.Text))
+			{
+				if (filterParamCount>1)
+				{
+					coursesQuery += " and ";
+				}
+
+				filterParamCount++;
+				coursesQuery += string.Format("firstName = '{0}'", firstName.Text);
+			}
+
+			if (!string.IsNullOrEmpty(midleName.Text) &&
+				!string.IsNullOrWhiteSpace(midleName.Text))
+			{
+				if (filterParamCount > 1)
+				{
+					coursesQuery += " and ";
+				}
+
+				filterParamCount++;
+				coursesQuery += string.Format("midleName = '{0}'", midleName.Text);
+			}
+
+			if (!string.IsNullOrEmpty(lastName.Text) &&
+				!string.IsNullOrWhiteSpace(lastName.Text))
+			{
+				if (filterParamCount > 1)
+				{
+					coursesQuery += " and ";
+				}
+
+				filterParamCount++;
+				coursesQuery += string.Format("lastName = '{0}'", lastName.Text);
+			}
+
+			if (!string.IsNullOrEmpty(courseVolume.Text) &&
+				!string.IsNullOrWhiteSpace(courseVolume.Text))
+			{
+				if (filterParamCount > 1)
+				{
+					coursesQuery += " and ";
+				}
+
+				filterParamCount++;
+				coursesQuery += string.Format("courseVolume = '{0}'", courseVolume.Text);
+			}
+
+			DbWorker dbWorker = new DbWorker();
+			List<string> columns = new List<string>() {
+				"id",
+				"Имя",
+				"Отчество",
+				"Фамилия",
+				"Наименование курса",
+				"Дата начала курса",
+				"Дата окончания курса",
+				"Объем курса"
+			};
+
+			dataGridView1.ColumnCount = columns.Count;
+			dataGridView1.ColumnHeadersVisible = true;
+
+			for (int i = 0; i < columns.Count; i++)
+			{
+				dataGridView1.Columns[i].Name = columns[i];
+			}
+
+			dataGridView1.Rows.Clear();
+			using (SqlConnection connection = dbWorker.GetConnection())
+			using (SqlCommand command = new SqlCommand())
+			{
+				command.Connection = connection;
+				command.CommandText = coursesQuery;
+				connection.Open();
+				SqlDataReader reader = command.ExecuteReader();
+				while (reader.Read())
+				{
+					dataGridView1.Rows.Add(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetDateTime(5), reader.GetDateTime(6), reader.GetInt32(7));
+				}
+				connection.Close();
+			}
 		}
 
 		private void button1_Click(object sender, EventArgs e)
@@ -77,5 +246,18 @@ namespace Повышение_квалификации
             _menu.Show();
 			//this.Close();
 		}
-    }
+
+		private void label4_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void button2_Click(object sender, EventArgs e)
+		{
+			// фильтр
+
+			FillDataGridWithFilter();
+
+		}
+	}
 }

@@ -34,17 +34,21 @@ where o.coursePassed = 1;
 use Courses
 go
 create view CourseNotPassedView as
-select o.id,u.firstName,u.midleName,u.lastName,k.coursName,k.courseVolume,k.startDate,k.endDate from Обучение o
+select o.id,u.firstName,u.midleName,u.lastName,k.coursName,k.courseVolume,k.startDate,k.endDate,v.coursName as 'coursTypeName', f.educationType from Обучение o
 left join Пользователи u
 on o.teacherId = u.id
 left join Курсы k
 on k.id = o.coursId
+left join ВидКурса v
+on k.coursTypeId = v.id
+left join ФормаОбучения f
+on f.id = k.educationFormId
 where o.coursePassed = 0;
 
 use Courses
 go
 Create View TeacherCoursesView as
-select k.id,k.coursName, k.courseVolume, f.educationType,v.coursName as 'courseTypeName',o.teacherId 
+select k.id,k.coursName, k.courseVolume, f.educationType,v.coursName as 'courseTypeName'--,o.teacherId 
 from Курсы k
 left join ФормаОбучения f
 on k.educationFormId = f.id

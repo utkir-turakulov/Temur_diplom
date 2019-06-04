@@ -85,7 +85,7 @@ namespace Повышение_квалификации
 				string res = dataGridView2[0, index].Value.ToString();
 
 				ExecQuery(string.Format(deleteQuery, dataGridView2[0, index].Value.ToString()));
-				this.userDataTableAdapter.Fill(this.coursesDataSet.UserData);
+				this.userDataTableAdapter.Fill(this.coursesDataSet.UserData1);
 			}
 		}
 
@@ -148,10 +148,14 @@ namespace Повышение_квалификации
 
 		private void DeleteUser_Load(object sender, EventArgs e)
         {
+			// TODO: данная строка кода позволяет загрузить данные в таблицу "coursesDataSet.Роли1". При необходимости она может быть перемещена или удалена.
+			this.ролиTableAdapter.Fill(this.coursesDataSet.Роли1);
+			// TODO: данная строка кода позволяет загрузить данные в таблицу "coursesDataSet.UserData1". При необходимости она может быть перемещена или удалена.
+			this.userDataTableAdapter.Fill(this.coursesDataSet.UserData1);
 			// TODO: данная строка кода позволяет загрузить данные в таблицу "coursesDataSet.Роли". При необходимости она может быть перемещена или удалена.
-			this.ролиTableAdapter.Fill(this.coursesDataSet.Роли);
+			this.ролиTableAdapter.Fill(this.coursesDataSet.Роли1);
 			// TODO: данная строка кода позволяет загрузить данные в таблицу "coursesDataSet.UserData". При необходимости она может быть перемещена или удалена.
-			this.userDataTableAdapter.Fill(this.coursesDataSet.UserData);
+			this.userDataTableAdapter.Fill(this.coursesDataSet.UserData1);
 			// TODO: данная строка кода позволяет загрузить данные в таблицу "coursesDataSet.UserData". При необходимости она может быть перемещена или удалена.
 			//	this.userDataTableAdapter.Fill(this.coursesDataSet.UserData);
 			// TODO: данная строка кода позволяет загрузить данные в таблицу "coursesDataSet.Авторизация". При необходимости она может быть перемещена или удалена.
@@ -250,17 +254,29 @@ namespace Повышение_квалификации
 
 		private void button3_Click(object sender, EventArgs e)
 		{
-			if (Helpers.GetDialogResult("Изменить запись?", "Изменение записи"))
+			if (!string.IsNullOrEmpty(login.Text) &&
+				!string.IsNullOrWhiteSpace(login.Text) &&
+				!string.IsNullOrEmpty(password.Text) &&
+				!string.IsNullOrWhiteSpace(password.Text) &&
+				!string.IsNullOrEmpty(firstName.Text) &&
+				!string.IsNullOrWhiteSpace(firstName.Text) &&
+				!string.IsNullOrEmpty(lastName.Text) &&
+				!string.IsNullOrWhiteSpace(lastName.Text) &&
+				!string.IsNullOrEmpty(midleName.Text) &&
+				!string.IsNullOrWhiteSpace(midleName.Text)
+				)
 			{
-				int index = dataGridView2.CurrentRow.Index;
-				string userQuery = @"update Пользователи
+				if (Helpers.GetDialogResult("Изменить запись?", "Изменение записи"))
+				{
+					int index = dataGridView2.CurrentRow.Index;
+					string userQuery = @"update Пользователи
 							set firstName = N'{0}',
 							midleName = N'{1}',
 							lastName = N'{2}',
 							dateOfBirth = '{3}'
 							where id = '{4}';";
 
-				string authQuery = @"
+					string authQuery = @"
 								begin
 									declare @authId int;
 									set @authId = (select authId from Пользователи where id = {0});
@@ -271,26 +287,31 @@ namespace Повышение_квалификации
 								end;
 							";
 
-				string resultQuery = string.Format(userQuery,
-					firstName.Text,
-					midleName.Text,
-					lastName.Text,
-					dateOfBirth.Value,
-					dataGridView2[0, index].Value.ToString());
+					string resultQuery = string.Format(userQuery,
+						firstName.Text,
+						midleName.Text,
+						lastName.Text,
+						dateOfBirth.Value,
+						dataGridView2[0, index].Value.ToString());
 
-				resultQuery = resultQuery + " " + string.Format(authQuery, dataGridView2[0, index].Value.ToString(), login.Text, password.Text);
+					resultQuery = resultQuery + " " + string.Format(authQuery, dataGridView2[0, index].Value.ToString(), login.Text, password.Text);
 
-				ExecQuery(resultQuery);
-				this.userDataTableAdapter.Fill(this.coursesDataSet.UserData);
+					ExecQuery(resultQuery);
+					this.userDataTableAdapter.Fill(this.coursesDataSet.UserData1);
 
-				firstName.Clear();
-				midleName.Clear();
-				lastName.Clear();
-				login.Clear();
-				password.Clear();
+					firstName.Clear();
+					midleName.Clear();
+					lastName.Clear();
+					login.Clear();
+					password.Clear();
 
-				MessageBox.Show("Запись изменена");
-			}			
+					MessageBox.Show("Запись изменена");
+				}
+			}
+			else
+			{
+				MessageBox.Show("Заполните все поля");
+			}
 		}
 	}
 }

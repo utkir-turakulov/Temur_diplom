@@ -28,32 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-			this.components = new System.ComponentModel.Container();
 			this.button1 = new System.Windows.Forms.Button();
 			this.button3 = new System.Windows.Forms.Button();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.courseVolumeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.coursePassedViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.coursesDataSet = new Повышение_квалификации.CoursesDataSet();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
+			this.button2 = new System.Windows.Forms.Button();
+			this.label3 = new System.Windows.Forms.Label();
+			this.lastName = new System.Windows.Forms.TextBox();
+			this.label4 = new System.Windows.Forms.Label();
+			this.label5 = new System.Windows.Forms.Label();
+			this.label6 = new System.Windows.Forms.Label();
+			this.label7 = new System.Windows.Forms.Label();
+			this.firstName = new System.Windows.Forms.TextBox();
+			this.midleName = new System.Windows.Forms.TextBox();
+			this.courseVolume = new System.Windows.Forms.TextBox();
 			this.coursePassedViewTableAdapter = new Повышение_квалификации.CoursesDataSetTableAdapters.CoursePassedViewTableAdapter();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.coursePassedViewBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.coursesDataSet)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// button1
 			// 
 			this.button1.BackgroundImage = global::Повышение_квалификации.Properties.Resources.Untitled_5;
-			this.button1.Location = new System.Drawing.Point(32, 418);
+			this.button1.Location = new System.Drawing.Point(21, 418);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(71, 71);
 			this.button1.TabIndex = 3;
@@ -77,84 +76,12 @@
 			// 
 			this.dataGridView1.AllowUserToAddRows = false;
 			this.dataGridView1.AllowUserToDeleteRows = false;
-			this.dataGridView1.AutoGenerateColumns = false;
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.courseVolumeDataGridViewTextBoxColumn});
-			this.dataGridView1.DataSource = this.coursePassedViewBindingSource;
-			this.dataGridView1.Location = new System.Drawing.Point(32, 60);
+			this.dataGridView1.Location = new System.Drawing.Point(21, 60);
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.ReadOnly = true;
-			this.dataGridView1.Size = new System.Drawing.Size(856, 350);
+			this.dataGridView1.Size = new System.Drawing.Size(712, 350);
 			this.dataGridView1.TabIndex = 11;
-			// 
-			// dataGridViewTextBoxColumn1
-			// 
-			this.dataGridViewTextBoxColumn1.DataPropertyName = "id";
-			this.dataGridViewTextBoxColumn1.HeaderText = "id";
-			this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-			this.dataGridViewTextBoxColumn1.ReadOnly = true;
-			// 
-			// dataGridViewTextBoxColumn2
-			// 
-			this.dataGridViewTextBoxColumn2.DataPropertyName = "firstName";
-			this.dataGridViewTextBoxColumn2.HeaderText = "firstName";
-			this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-			this.dataGridViewTextBoxColumn2.ReadOnly = true;
-			// 
-			// dataGridViewTextBoxColumn3
-			// 
-			this.dataGridViewTextBoxColumn3.DataPropertyName = "midleName";
-			this.dataGridViewTextBoxColumn3.HeaderText = "midleName";
-			this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-			this.dataGridViewTextBoxColumn3.ReadOnly = true;
-			// 
-			// dataGridViewTextBoxColumn4
-			// 
-			this.dataGridViewTextBoxColumn4.DataPropertyName = "lastName";
-			this.dataGridViewTextBoxColumn4.HeaderText = "lastName";
-			this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-			this.dataGridViewTextBoxColumn4.ReadOnly = true;
-			// 
-			// dataGridViewTextBoxColumn5
-			// 
-			this.dataGridViewTextBoxColumn5.DataPropertyName = "coursName";
-			this.dataGridViewTextBoxColumn5.HeaderText = "coursName";
-			this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-			this.dataGridViewTextBoxColumn5.ReadOnly = true;
-			// 
-			// dataGridViewTextBoxColumn6
-			// 
-			this.dataGridViewTextBoxColumn6.DataPropertyName = "startDate";
-			this.dataGridViewTextBoxColumn6.HeaderText = "startDate";
-			this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-			this.dataGridViewTextBoxColumn6.ReadOnly = true;
-			// 
-			// dataGridViewTextBoxColumn7
-			// 
-			this.dataGridViewTextBoxColumn7.DataPropertyName = "endDate";
-			this.dataGridViewTextBoxColumn7.HeaderText = "endDate";
-			this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-			this.dataGridViewTextBoxColumn7.ReadOnly = true;
-			// 
-			// courseVolumeDataGridViewTextBoxColumn
-			// 
-			this.courseVolumeDataGridViewTextBoxColumn.DataPropertyName = "courseVolume";
-			this.courseVolumeDataGridViewTextBoxColumn.HeaderText = "courseVolume";
-			this.courseVolumeDataGridViewTextBoxColumn.Name = "courseVolumeDataGridViewTextBoxColumn";
-			this.courseVolumeDataGridViewTextBoxColumn.ReadOnly = true;
-			// 
-			// coursePassedViewBindingSource
-			// 
-			this.coursePassedViewBindingSource.DataMember = "CoursePassedView";
-			this.coursePassedViewBindingSource.DataSource = this.coursesDataSet;
 			// 
 			// coursesDataSet
 			// 
@@ -183,6 +110,107 @@
 			this.label2.TabIndex = 13;
 			this.label2.Text = "Таблица прошедших курсы";
 			// 
+			// button2
+			// 
+			this.button2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+			this.button2.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold);
+			this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+			this.button2.Location = new System.Drawing.Point(952, 416);
+			this.button2.Name = "button2";
+			this.button2.Size = new System.Drawing.Size(141, 66);
+			this.button2.TabIndex = 14;
+			this.button2.Text = "Поиск";
+			this.button2.UseVisualStyleBackColor = false;
+			this.button2.Click += new System.EventHandler(this.button2_Click);
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.BackColor = System.Drawing.Color.Transparent;
+			this.label3.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.label3.Location = new System.Drawing.Point(915, 22);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(219, 30);
+			this.label3.TabIndex = 15;
+			this.label3.Text = "Фильтрация данных";
+			// 
+			// lastName
+			// 
+			this.lastName.Location = new System.Drawing.Point(952, 84);
+			this.lastName.Multiline = true;
+			this.lastName.Name = "lastName";
+			this.lastName.Size = new System.Drawing.Size(141, 20);
+			this.lastName.TabIndex = 16;
+			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.BackColor = System.Drawing.Color.Transparent;
+			this.label4.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.label4.Location = new System.Drawing.Point(798, 79);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(104, 30);
+			this.label4.TabIndex = 17;
+			this.label4.Text = "Фамилия";
+			this.label4.Click += new System.EventHandler(this.label4_Click);
+			// 
+			// label5
+			// 
+			this.label5.AutoSize = true;
+			this.label5.BackColor = System.Drawing.Color.Transparent;
+			this.label5.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.label5.Location = new System.Drawing.Point(798, 126);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(55, 30);
+			this.label5.TabIndex = 18;
+			this.label5.Text = "Имя";
+			// 
+			// label6
+			// 
+			this.label6.AutoSize = true;
+			this.label6.BackColor = System.Drawing.Color.Transparent;
+			this.label6.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.label6.Location = new System.Drawing.Point(795, 170);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(107, 30);
+			this.label6.TabIndex = 19;
+			this.label6.Text = "Отчество";
+			// 
+			// label7
+			// 
+			this.label7.AutoSize = true;
+			this.label7.BackColor = System.Drawing.Color.Transparent;
+			this.label7.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.label7.Location = new System.Drawing.Point(798, 218);
+			this.label7.Name = "label7";
+			this.label7.Size = new System.Drawing.Size(146, 30);
+			this.label7.TabIndex = 20;
+			this.label7.Text = "Объем курса";
+			// 
+			// firstName
+			// 
+			this.firstName.Location = new System.Drawing.Point(952, 131);
+			this.firstName.Multiline = true;
+			this.firstName.Name = "firstName";
+			this.firstName.Size = new System.Drawing.Size(141, 20);
+			this.firstName.TabIndex = 21;
+			// 
+			// midleName
+			// 
+			this.midleName.Location = new System.Drawing.Point(952, 175);
+			this.midleName.Multiline = true;
+			this.midleName.Name = "midleName";
+			this.midleName.Size = new System.Drawing.Size(141, 20);
+			this.midleName.TabIndex = 22;
+			// 
+			// courseVolume
+			// 
+			this.courseVolume.Location = new System.Drawing.Point(952, 227);
+			this.courseVolume.Multiline = true;
+			this.courseVolume.Name = "courseVolume";
+			this.courseVolume.Size = new System.Drawing.Size(141, 20);
+			this.courseVolume.TabIndex = 23;
+			// 
 			// coursePassedViewTableAdapter
 			// 
 			this.coursePassedViewTableAdapter.ClearBeforeFill = true;
@@ -192,7 +220,17 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackgroundImage = global::Повышение_квалификации.Properties.Resources.фон;
-			this.ClientSize = new System.Drawing.Size(1138, 498);
+			this.ClientSize = new System.Drawing.Size(1171, 528);
+			this.Controls.Add(this.courseVolume);
+			this.Controls.Add(this.midleName);
+			this.Controls.Add(this.firstName);
+			this.Controls.Add(this.label7);
+			this.Controls.Add(this.label6);
+			this.Controls.Add(this.label5);
+			this.Controls.Add(this.label4);
+			this.Controls.Add(this.lastName);
+			this.Controls.Add(this.label3);
+			this.Controls.Add(this.button2);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.dataGridView1);
@@ -205,7 +243,6 @@
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormClosingEvent);
 			this.Load += new System.EventHandler(this.СформироватьОтчет_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.coursePassedViewBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.coursesDataSet)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
@@ -233,15 +270,16 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
 		private CoursesDataSet coursesDataSet;
-		private System.Windows.Forms.BindingSource coursePassedViewBindingSource;
+		private System.Windows.Forms.Button button2;
+		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.TextBox lastName;
+		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.Label label5;
+		private System.Windows.Forms.Label label6;
+		private System.Windows.Forms.Label label7;
+		private System.Windows.Forms.TextBox firstName;
+		private System.Windows.Forms.TextBox midleName;
+		private System.Windows.Forms.TextBox courseVolume;
 		private CoursesDataSetTableAdapters.CoursePassedViewTableAdapter coursePassedViewTableAdapter;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-		private System.Windows.Forms.DataGridViewTextBoxColumn courseVolumeDataGridViewTextBoxColumn;
 	}
 }

@@ -63,8 +63,12 @@ namespace Повышение_квалификации
 
 		private void CreateUser_Load(object sender, EventArgs e)
 		{
+			// TODO: данная строка кода позволяет загрузить данные в таблицу "coursesDataSet.UserData1". При необходимости она может быть перемещена или удалена.
+			this.userDataTableAdapter.Fill(this.coursesDataSet.UserData1);
+			// TODO: данная строка кода позволяет загрузить данные в таблицу "coursesDataSet1.UserData1". При необходимости она может быть перемещена или удалена.
+			this.userDataTableAdapter.Fill(this.coursesDataSet.UserData1);
 			// TODO: данная строка кода позволяет загрузить данные в таблицу "coursesDataSet.UserData". При необходимости она может быть перемещена или удалена.
-			this.userDataTableAdapter.Fill(this.coursesDataSet.UserData);
+			//this.userDataTableAdapter.Fill(this.coursesDataSet.UserData);
 			// TODO: данная строка кода позволяет загрузить данные в таблицу "silverHa.Авторизация". При необходимости она может быть перемещена или удалена.
 			// this.авторизацияTableAdapter.Fill(this.silverHa.Авторизация);
 			// TODO: данная строка кода позволяет загрузить данные в таблицу "silverHa.Пользователи". При необходимости она может быть перемещена или удалена.
@@ -234,7 +238,7 @@ namespace Повышение_квалификации
 				textBox9.Clear();
 				textBox10.Clear();
 
-				this.userDataTableAdapter.Fill(this.coursesDataSet.UserData);
+				this.userDataTableAdapter.Fill(this.coursesDataSet.UserData1);
 				dataGridView1.Refresh();
 				MessageBox.Show("Запись добавлена");
 			}

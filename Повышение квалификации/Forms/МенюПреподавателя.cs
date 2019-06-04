@@ -88,7 +88,7 @@ namespace Повышение_квалификации
 							where TABLE_NAME = 'TeacherCoursesView'; ";
 
 			string coursesQuery = @"
-								select k.id,k.coursName, k.courseVolume, f.educationType,v.coursName as 'courseTypeName',o.teacherId 
+								select distinct k.id,k.coursName, k.courseVolume, f.educationType,v.coursName as 'courseTypeName' --,o.teacherId 
 								from Курсы k
 								left join Обучение o
 								on o.coursId = k.id
@@ -101,9 +101,14 @@ namespace Повышение_квалификации
 								and k.id in (
 								select id from Курсы
 								except 
-								select coursId
-								from Обучение 
-								)";
+								select id from Курсы
+								where id in 
+								(
+									select coursId 
+									from Обучение
+									where teacherId = {0}
+								)
+								) and k.endDate > '{1}'";
 
 
 			DbWorker dbWorker = new DbWorker();
@@ -136,12 +141,13 @@ namespace Повышение_квалификации
 			using (SqlCommand command = new SqlCommand())
 			{
 				command.Connection = connection;
-				command.CommandText = string.Format(coursesQuery,_user.UserId);
+				command.CommandText = string.Format(coursesQuery,_user.UserId, DateTime.Now);
 				connection.Open();
 				SqlDataReader reader = command.ExecuteReader();
 				while (reader.Read())
 				{
-					dataGridView1.Rows.Add(reader.GetInt32(0), reader.GetString(1), reader.GetInt32(2), reader.GetString(3), reader.GetString(4), reader["teacherId"] );
+					//dataGridView1.Rows.Add(reader.GetInt32(0), reader.GetString(1), reader.GetInt32(2), reader.GetString(3), reader.GetString(4), reader["teacherId"] );
+					dataGridView1.Rows.Add(reader.GetInt32(0), reader.GetString(1), reader.GetInt32(2), reader.GetString(3), reader.GetString(4));
 				}
 				connection.Close();
 			}
