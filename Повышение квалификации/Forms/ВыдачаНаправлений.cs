@@ -113,20 +113,18 @@ namespace Повышение_квалификации
 				return;
 			}
 
-			bool created = MakeTemplate(dataGridView3[0, courseIndex].Value.ToString(), dataGridView2[0, teacherIndex].Value.ToString());
-
-			if (created)
+			using (SqlConnection connection = dbWorker.GetConnection())
+			using (SqlCommand command = new SqlCommand())
 			{
-				using (SqlConnection connection = dbWorker.GetConnection())
-				using (SqlCommand command = new SqlCommand())
-				{
-					command.Connection = connection;
-					command.CommandText = string.Format(query, dataGridView2[0, teacherIndex].Value.ToString(), dataGridView3[0, courseIndex].Value.ToString());
-					connection.Open();
-					command.ExecuteNonQuery();
-					connection.Close();
-				}
-			}			
+				command.Connection = connection;
+				command.CommandText = string.Format(query, dataGridView2[0, teacherIndex].Value.ToString(), dataGridView3[0, courseIndex].Value.ToString());
+				connection.Open();
+				command.ExecuteNonQuery();
+				connection.Close();
+			}
+
+
+			bool created = MakeTemplate(dataGridView3[0, courseIndex].Value.ToString(), dataGridView2[0, teacherIndex].Value.ToString());
 		}
 
 		public bool MakeTemplate(string courseIndex, string teacherIndex)
@@ -162,7 +160,6 @@ namespace Повышение_квалификации
 					MessageBox.Show("Данные не найдены");
 					return false;
 				}
-				
 			}
 			catch (Exception ex)
 			{

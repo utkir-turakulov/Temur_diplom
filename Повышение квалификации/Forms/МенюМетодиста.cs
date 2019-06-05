@@ -26,6 +26,10 @@ namespace Повышение_квалификации
 
 		private void МенюМетодиста_Load(object sender, EventArgs e)
 		{
+			// TODO: данная строка кода позволяет загрузить данные в таблицу "coursesDataSet1.ФормаОбучения1". При необходимости она может быть перемещена или удалена.
+			this.формаОбученияTableAdapter.Fill(this.coursesDataSet1.ФормаОбучения1);
+			// TODO: данная строка кода позволяет загрузить данные в таблицу "coursesDataSet1.ВидКурса1". При необходимости она может быть перемещена или удалена.
+			this.видКурсаTableAdapter.Fill(this.coursesDataSet1.ВидКурса1);
 			// TODO: данная строка кода позволяет загрузить данные в таблицу "coursesDataSet1.CoursesView1". При необходимости она может быть перемещена или удалена.
 			this.coursesViewTableAdapter.Fill(this.coursesDataSet1.CoursesView1);
 			// TODO: данная строка кода позволяет загрузить данные в таблицу "coursesDataSet.Курсы". При необходимости она может быть перемещена или удалена.
@@ -151,7 +155,7 @@ namespace Повышение_квалификации
 			}
 
 			dbWorker.AddCours(textBox1.Text, coursTypeId, courseVolume, coursFormId, dateTimePicker1.Value, dateTimePicker2.Value);
-			this.coursesViewTableAdapter.Fill(this.coursesDataSet.CoursesView1);
+			this.coursesViewTableAdapter.Fill(this.coursesDataSet1.CoursesView1);
 		}
 
 		private void button3_Click(object sender, EventArgs e)
@@ -232,7 +236,7 @@ namespace Повышение_квалификации
 				}
 
 				dbWorker.UpdateCourses(dataGridView1, textBox1.Text, coursTypeId, courseVolume, coursFormId, dateTimePicker1.Value, dateTimePicker2.Value);
-				this.coursesViewTableAdapter.Fill(this.coursesDataSet.CoursesView1);
+				this.coursesViewTableAdapter.Fill(this.coursesDataSet1.CoursesView1);
 			}
 		}
 
@@ -246,8 +250,8 @@ namespace Повышение_квалификации
 				int index = dataGridView1.CurrentRow.Index;
 
 				dbWorker.ExecQuery(string.Format("Delete from Курсы where id={0}", dataGridView1[0, index].Value.ToString()));
-				dataGridView1.Refresh();
-				this.coursesViewTableAdapter.Fill(this.coursesDataSet.CoursesView1);
+				//dataGridView1.Refresh();
+				this.coursesViewTableAdapter.Fill(this.coursesDataSet1.CoursesView1);
 			}
 		}
 
