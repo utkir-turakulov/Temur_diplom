@@ -273,8 +273,9 @@ namespace Повышение_квалификации
 							set firstName = N'{0}',
 							midleName = N'{1}',
 							lastName = N'{2}',
-							dateOfBirth = '{3}'
-							where id = '{4}';";
+							dateOfBirth = '{3}',
+							roleId = {4}
+							where id = '{5}';";
 
 					string authQuery = @"
 								begin
@@ -292,6 +293,7 @@ namespace Повышение_квалификации
 						midleName.Text,
 						lastName.Text,
 						dateOfBirth.Value,
+						role.SelectedIndex+1,
 						dataGridView2[0, index].Value.ToString());
 
 					resultQuery = resultQuery + " " + string.Format(authQuery, dataGridView2[0, index].Value.ToString(), login.Text, password.Text);
