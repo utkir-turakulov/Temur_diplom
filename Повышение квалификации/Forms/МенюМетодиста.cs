@@ -156,6 +156,8 @@ namespace Повышение_квалификации
 
 			dbWorker.AddCours(textBox1.Text, coursTypeId, courseVolume, coursFormId, dateTimePicker1.Value, dateTimePicker2.Value);
 			this.coursesViewTableAdapter.Fill(this.coursesDataSet1.CoursesView1);
+			textBox1.Clear();
+			textBox2.Clear();
 		}
 
 		private void button3_Click(object sender, EventArgs e)
@@ -237,6 +239,8 @@ namespace Повышение_квалификации
 
 				dbWorker.UpdateCourses(dataGridView1, textBox1.Text, coursTypeId, courseVolume, coursFormId, dateTimePicker1.Value, dateTimePicker2.Value);
 				this.coursesViewTableAdapter.Fill(this.coursesDataSet1.CoursesView1);
+				textBox1.Clear();
+				textBox2.Clear();
 			}
 		}
 
@@ -252,6 +256,8 @@ namespace Повышение_квалификации
 				dbWorker.ExecQuery(string.Format("Delete from Курсы where id={0}", dataGridView1[0, index].Value.ToString()));
 				//dataGridView1.Refresh();
 				this.coursesViewTableAdapter.Fill(this.coursesDataSet1.CoursesView1);
+				textBox1.Clear();
+				textBox2.Clear();
 			}
 		}
 
