@@ -86,6 +86,12 @@ namespace Повышение_квалификации
 
 				ExecQuery(string.Format(deleteQuery, dataGridView2[0, index].Value.ToString()));
 				this.userDataTableAdapter.Fill(this.coursesDataSet.UserData1);
+
+				firstName.Clear();
+				midleName.Clear();
+				lastName.Clear();
+				login.Clear();
+				password.Clear();
 			}
 		}
 

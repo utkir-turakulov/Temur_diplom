@@ -160,7 +160,7 @@ namespace Повышение_квалификации
 				}
 
 				filterParamCount++;
-				coursesQuery += string.Format("firstName = '{0}'", firstName.Text);
+				coursesQuery += string.Format("firstName = N'{0}'", firstName.Text);
 			}
 
 			if (!string.IsNullOrEmpty(midleName.Text) &&
@@ -172,7 +172,7 @@ namespace Повышение_квалификации
 				}
 
 				filterParamCount++;
-				coursesQuery += string.Format("midleName = '{0}'", midleName.Text);
+				coursesQuery += string.Format("midleName = N'{0}'", midleName.Text);
 			}
 
 			if (!string.IsNullOrEmpty(lastName.Text) &&
@@ -184,7 +184,7 @@ namespace Повышение_квалификации
 				}
 
 				filterParamCount++;
-				coursesQuery += string.Format("lastName = '{0}'", lastName.Text);
+				coursesQuery += string.Format("lastName = N'{0}'", lastName.Text);
 			}
 
 			if (!string.IsNullOrEmpty(courseVolume.Text) &&
@@ -201,7 +201,7 @@ namespace Повышение_квалификации
 
 			DbWorker dbWorker = new DbWorker();
 			List<string> columns = new List<string>() {
-				"id",
+				"Код",
 				"Имя",
 				"Отчество",
 				"Фамилия",
@@ -229,7 +229,7 @@ namespace Повышение_квалификации
 				SqlDataReader reader = command.ExecuteReader();
 				while (reader.Read())
 				{
-					dataGridView1.Rows.Add(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetDateTime(5), reader.GetDateTime(6), reader.GetInt32(7));
+					dataGridView1.Rows.Add(reader.GetInt32(0), reader.GetValue(1), reader.GetValue(2), reader.GetValue(3), reader.GetValue(4), reader.GetValue(5), reader.GetValue(6), reader.GetValue(7));
 				}
 				connection.Close();
 			}

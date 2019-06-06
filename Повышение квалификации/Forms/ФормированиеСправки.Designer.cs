@@ -45,6 +45,10 @@
 			this.midleName = new System.Windows.Forms.TextBox();
 			this.courseVolume = new System.Windows.Forms.TextBox();
 			this.coursePassedViewTableAdapter = new Повышение_квалификации.CoursesDataSetTableAdapters.CoursePassedViewTableAdapter();
+			this.label8 = new System.Windows.Forms.Label();
+			this.label9 = new System.Windows.Forms.Label();
+			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.textBox2 = new System.Windows.Forms.TextBox();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.coursesDataSet)).BeginInit();
 			this.SuspendLayout();
@@ -77,10 +81,10 @@
 			this.dataGridView1.AllowUserToAddRows = false;
 			this.dataGridView1.AllowUserToDeleteRows = false;
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView1.Location = new System.Drawing.Point(21, 60);
+			this.dataGridView1.Location = new System.Drawing.Point(12, 60);
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.ReadOnly = true;
-			this.dataGridView1.Size = new System.Drawing.Size(712, 350);
+			this.dataGridView1.Size = new System.Drawing.Size(846, 350);
 			this.dataGridView1.TabIndex = 11;
 			// 
 			// coursesDataSet
@@ -128,7 +132,7 @@
 			this.label3.AutoSize = true;
 			this.label3.BackColor = System.Drawing.Color.Transparent;
 			this.label3.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.label3.Location = new System.Drawing.Point(915, 22);
+			this.label3.Location = new System.Drawing.Point(942, 78);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(219, 30);
 			this.label3.TabIndex = 15;
@@ -136,10 +140,10 @@
 			// 
 			// lastName
 			// 
-			this.lastName.Location = new System.Drawing.Point(952, 84);
+			this.lastName.Location = new System.Drawing.Point(1018, 136);
 			this.lastName.Multiline = true;
 			this.lastName.Name = "lastName";
-			this.lastName.Size = new System.Drawing.Size(141, 20);
+			this.lastName.Size = new System.Drawing.Size(141, 25);
 			this.lastName.TabIndex = 16;
 			// 
 			// label4
@@ -147,7 +151,7 @@
 			this.label4.AutoSize = true;
 			this.label4.BackColor = System.Drawing.Color.Transparent;
 			this.label4.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.label4.Location = new System.Drawing.Point(798, 79);
+			this.label4.Location = new System.Drawing.Point(885, 131);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(104, 30);
 			this.label4.TabIndex = 17;
@@ -159,7 +163,7 @@
 			this.label5.AutoSize = true;
 			this.label5.BackColor = System.Drawing.Color.Transparent;
 			this.label5.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.label5.Location = new System.Drawing.Point(798, 126);
+			this.label5.Location = new System.Drawing.Point(895, 178);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(55, 30);
 			this.label5.TabIndex = 18;
@@ -170,7 +174,7 @@
 			this.label6.AutoSize = true;
 			this.label6.BackColor = System.Drawing.Color.Transparent;
 			this.label6.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.label6.Location = new System.Drawing.Point(795, 170);
+			this.label6.Location = new System.Drawing.Point(882, 222);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(107, 30);
 			this.label6.TabIndex = 19;
@@ -181,7 +185,7 @@
 			this.label7.AutoSize = true;
 			this.label7.BackColor = System.Drawing.Color.Transparent;
 			this.label7.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.label7.Location = new System.Drawing.Point(798, 218);
+			this.label7.Location = new System.Drawing.Point(864, 274);
 			this.label7.Name = "label7";
 			this.label7.Size = new System.Drawing.Size(146, 30);
 			this.label7.TabIndex = 20;
@@ -189,38 +193,79 @@
 			// 
 			// firstName
 			// 
-			this.firstName.Location = new System.Drawing.Point(952, 131);
+			this.firstName.Location = new System.Drawing.Point(1020, 183);
 			this.firstName.Multiline = true;
 			this.firstName.Name = "firstName";
-			this.firstName.Size = new System.Drawing.Size(141, 20);
+			this.firstName.Size = new System.Drawing.Size(141, 25);
 			this.firstName.TabIndex = 21;
 			// 
 			// midleName
 			// 
-			this.midleName.Location = new System.Drawing.Point(952, 175);
+			this.midleName.Location = new System.Drawing.Point(1020, 227);
 			this.midleName.Multiline = true;
 			this.midleName.Name = "midleName";
-			this.midleName.Size = new System.Drawing.Size(141, 20);
+			this.midleName.Size = new System.Drawing.Size(141, 25);
 			this.midleName.TabIndex = 22;
 			// 
 			// courseVolume
 			// 
-			this.courseVolume.Location = new System.Drawing.Point(952, 227);
+			this.courseVolume.Location = new System.Drawing.Point(1020, 279);
 			this.courseVolume.Multiline = true;
 			this.courseVolume.Name = "courseVolume";
-			this.courseVolume.Size = new System.Drawing.Size(141, 20);
+			this.courseVolume.Size = new System.Drawing.Size(141, 25);
 			this.courseVolume.TabIndex = 23;
 			// 
 			// coursePassedViewTableAdapter
 			// 
 			this.coursePassedViewTableAdapter.ClearBeforeFill = true;
 			// 
+			// label8
+			// 
+			this.label8.AutoSize = true;
+			this.label8.BackColor = System.Drawing.Color.Transparent;
+			this.label8.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.label8.Location = new System.Drawing.Point(864, 319);
+			this.label8.Name = "label8";
+			this.label8.Size = new System.Drawing.Size(175, 30);
+			this.label8.TabIndex = 24;
+			this.label8.Text = "Название курса";
+			// 
+			// label9
+			// 
+			this.label9.AutoSize = true;
+			this.label9.BackColor = System.Drawing.Color.Transparent;
+			this.label9.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.label9.Location = new System.Drawing.Point(882, 361);
+			this.label9.Name = "label9";
+			this.label9.Size = new System.Drawing.Size(116, 30);
+			this.label9.TabIndex = 25;
+			this.label9.Text = "Вид курса";
+			// 
+			// textBox1
+			// 
+			this.textBox1.Location = new System.Drawing.Point(1020, 371);
+			this.textBox1.Name = "textBox1";
+			this.textBox1.Size = new System.Drawing.Size(173, 20);
+			this.textBox1.TabIndex = 26;
+			// 
+			// textBox2
+			// 
+			this.textBox2.Location = new System.Drawing.Point(1035, 324);
+			this.textBox2.Multiline = true;
+			this.textBox2.Name = "textBox2";
+			this.textBox2.Size = new System.Drawing.Size(170, 25);
+			this.textBox2.TabIndex = 27;
+			// 
 			// СформироватьОтчет
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackgroundImage = global::Повышение_квалификации.Properties.Resources.фон;
-			this.ClientSize = new System.Drawing.Size(1171, 528);
+			this.ClientSize = new System.Drawing.Size(1262, 528);
+			this.Controls.Add(this.textBox2);
+			this.Controls.Add(this.textBox1);
+			this.Controls.Add(this.label9);
+			this.Controls.Add(this.label8);
 			this.Controls.Add(this.courseVolume);
 			this.Controls.Add(this.midleName);
 			this.Controls.Add(this.firstName);
@@ -281,5 +326,9 @@
 		private System.Windows.Forms.TextBox midleName;
 		private System.Windows.Forms.TextBox courseVolume;
 		private CoursesDataSetTableAdapters.CoursePassedViewTableAdapter coursePassedViewTableAdapter;
+		private System.Windows.Forms.Label label8;
+		private System.Windows.Forms.Label label9;
+		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.TextBox textBox2;
 	}
 }

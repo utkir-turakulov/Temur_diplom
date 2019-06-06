@@ -32,14 +32,6 @@
 			this.button1 = new System.Windows.Forms.Button();
 			this.button2 = new System.Windows.Forms.Button();
 			this.dataGridView2 = new System.Windows.Forms.DataGridView();
-			this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.midleNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dateOfBirthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.loginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.roleNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.userData1BindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.coursesDataSet = new Повышение_квалификации.CoursesDataSet();
 			this.firstName = new System.Windows.Forms.TextBox();
@@ -55,13 +47,21 @@
 			this.label11 = new System.Windows.Forms.Label();
 			this.label12 = new System.Windows.Forms.Label();
 			this.role = new System.Windows.Forms.ComboBox();
+			this.роли1BindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.button3 = new System.Windows.Forms.Button();
 			this.dateOfBirth = new System.Windows.Forms.DateTimePicker();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.userDataTableAdapter = new Повышение_квалификации.CoursesDataSetTableAdapters.UserDataTableAdapter();
-			this.роли1BindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.ролиTableAdapter = new Повышение_квалификации.CoursesDataSetTableAdapters.РолиTableAdapter();
+			this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.midleNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dateOfBirthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.loginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.roleNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.userData1BindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.coursesDataSet)).BeginInit();
@@ -114,62 +114,6 @@
 			this.dataGridView2.TabIndex = 23;
 			this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.RowClickEvent);
 			this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
-			// 
-			// idDataGridViewTextBoxColumn
-			// 
-			this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-			this.idDataGridViewTextBoxColumn.HeaderText = "id";
-			this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-			this.idDataGridViewTextBoxColumn.ReadOnly = true;
-			// 
-			// firstNameDataGridViewTextBoxColumn
-			// 
-			this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "firstName";
-			this.firstNameDataGridViewTextBoxColumn.HeaderText = "firstName";
-			this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-			this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
-			// 
-			// midleNameDataGridViewTextBoxColumn
-			// 
-			this.midleNameDataGridViewTextBoxColumn.DataPropertyName = "midleName";
-			this.midleNameDataGridViewTextBoxColumn.HeaderText = "midleName";
-			this.midleNameDataGridViewTextBoxColumn.Name = "midleNameDataGridViewTextBoxColumn";
-			this.midleNameDataGridViewTextBoxColumn.ReadOnly = true;
-			// 
-			// lastNameDataGridViewTextBoxColumn
-			// 
-			this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "lastName";
-			this.lastNameDataGridViewTextBoxColumn.HeaderText = "lastName";
-			this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-			this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
-			// 
-			// dateOfBirthDataGridViewTextBoxColumn
-			// 
-			this.dateOfBirthDataGridViewTextBoxColumn.DataPropertyName = "dateOfBirth";
-			this.dateOfBirthDataGridViewTextBoxColumn.HeaderText = "dateOfBirth";
-			this.dateOfBirthDataGridViewTextBoxColumn.Name = "dateOfBirthDataGridViewTextBoxColumn";
-			this.dateOfBirthDataGridViewTextBoxColumn.ReadOnly = true;
-			// 
-			// loginDataGridViewTextBoxColumn
-			// 
-			this.loginDataGridViewTextBoxColumn.DataPropertyName = "login";
-			this.loginDataGridViewTextBoxColumn.HeaderText = "login";
-			this.loginDataGridViewTextBoxColumn.Name = "loginDataGridViewTextBoxColumn";
-			this.loginDataGridViewTextBoxColumn.ReadOnly = true;
-			// 
-			// passwordDataGridViewTextBoxColumn
-			// 
-			this.passwordDataGridViewTextBoxColumn.DataPropertyName = "password";
-			this.passwordDataGridViewTextBoxColumn.HeaderText = "password";
-			this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
-			this.passwordDataGridViewTextBoxColumn.ReadOnly = true;
-			// 
-			// roleNameDataGridViewTextBoxColumn
-			// 
-			this.roleNameDataGridViewTextBoxColumn.DataPropertyName = "roleName";
-			this.roleNameDataGridViewTextBoxColumn.HeaderText = "roleName";
-			this.roleNameDataGridViewTextBoxColumn.Name = "roleNameDataGridViewTextBoxColumn";
-			this.roleNameDataGridViewTextBoxColumn.ReadOnly = true;
 			// 
 			// userData1BindingSource
 			// 
@@ -304,6 +248,11 @@
 			this.role.TabIndex = 23;
 			this.role.ValueMember = "id";
 			// 
+			// роли1BindingSource
+			// 
+			this.роли1BindingSource.DataMember = "Роли1";
+			this.роли1BindingSource.DataSource = this.coursesDataSet;
+			// 
 			// button3
 			// 
 			this.button3.BackColor = System.Drawing.SystemColors.InfoText;
@@ -350,14 +299,66 @@
 			// 
 			this.userDataTableAdapter.ClearBeforeFill = true;
 			// 
-			// роли1BindingSource
-			// 
-			this.роли1BindingSource.DataMember = "Роли1";
-			this.роли1BindingSource.DataSource = this.coursesDataSet;
-			// 
 			// ролиTableAdapter
 			// 
 			this.ролиTableAdapter.ClearBeforeFill = true;
+			// 
+			// idDataGridViewTextBoxColumn
+			// 
+			this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+			this.idDataGridViewTextBoxColumn.HeaderText = "Код";
+			this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+			this.idDataGridViewTextBoxColumn.ReadOnly = true;
+			this.idDataGridViewTextBoxColumn.Width = 80;
+			// 
+			// firstNameDataGridViewTextBoxColumn
+			// 
+			this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "firstName";
+			this.firstNameDataGridViewTextBoxColumn.HeaderText = "Имя";
+			this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+			this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// midleNameDataGridViewTextBoxColumn
+			// 
+			this.midleNameDataGridViewTextBoxColumn.DataPropertyName = "midleName";
+			this.midleNameDataGridViewTextBoxColumn.HeaderText = "Отчество";
+			this.midleNameDataGridViewTextBoxColumn.Name = "midleNameDataGridViewTextBoxColumn";
+			this.midleNameDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// lastNameDataGridViewTextBoxColumn
+			// 
+			this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "lastName";
+			this.lastNameDataGridViewTextBoxColumn.HeaderText = "Фамилия";
+			this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+			this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// dateOfBirthDataGridViewTextBoxColumn
+			// 
+			this.dateOfBirthDataGridViewTextBoxColumn.DataPropertyName = "dateOfBirth";
+			this.dateOfBirthDataGridViewTextBoxColumn.HeaderText = "Дата рождения";
+			this.dateOfBirthDataGridViewTextBoxColumn.Name = "dateOfBirthDataGridViewTextBoxColumn";
+			this.dateOfBirthDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// loginDataGridViewTextBoxColumn
+			// 
+			this.loginDataGridViewTextBoxColumn.DataPropertyName = "login";
+			this.loginDataGridViewTextBoxColumn.HeaderText = "Логин";
+			this.loginDataGridViewTextBoxColumn.Name = "loginDataGridViewTextBoxColumn";
+			this.loginDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// passwordDataGridViewTextBoxColumn
+			// 
+			this.passwordDataGridViewTextBoxColumn.DataPropertyName = "password";
+			this.passwordDataGridViewTextBoxColumn.HeaderText = "Пароль";
+			this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
+			this.passwordDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// roleNameDataGridViewTextBoxColumn
+			// 
+			this.roleNameDataGridViewTextBoxColumn.DataPropertyName = "roleName";
+			this.roleNameDataGridViewTextBoxColumn.HeaderText = "Роль";
+			this.roleNameDataGridViewTextBoxColumn.Name = "roleNameDataGridViewTextBoxColumn";
+			this.roleNameDataGridViewTextBoxColumn.ReadOnly = true;
 			// 
 			// DeleteUser
 			// 
@@ -427,6 +428,8 @@
         private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.BindingSource userData1BindingSource;
 		private CoursesDataSetTableAdapters.UserDataTableAdapter userDataTableAdapter;
+		private System.Windows.Forms.BindingSource роли1BindingSource;
+		private CoursesDataSetTableAdapters.РолиTableAdapter ролиTableAdapter;
 		private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn midleNameDataGridViewTextBoxColumn;
@@ -435,7 +438,5 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn loginDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn roleNameDataGridViewTextBoxColumn;
-		private System.Windows.Forms.BindingSource роли1BindingSource;
-		private CoursesDataSetTableAdapters.РолиTableAdapter ролиTableAdapter;
 	}
 }

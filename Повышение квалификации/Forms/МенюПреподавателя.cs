@@ -112,9 +112,15 @@ namespace Повышение_квалификации
 
 
 			DbWorker dbWorker = new DbWorker();
-			List<string> columns = new List<string>();
+			List<string> columns = new List<string>() {
+				"Код",
+				"Название курса",
+				"Объем курса",
+				"Форма обучения",
+				"Вид курса"
+			};
 
-			using (SqlConnection connection = dbWorker.GetConnection())
+			/*using (SqlConnection connection = dbWorker.GetConnection())
 			using (SqlCommand command = new SqlCommand())
 			{
 				command.Connection = connection;
@@ -126,7 +132,7 @@ namespace Повышение_квалификации
 					columns.Add(reader.GetString(0));
 				}
 				connection.Close();
-			}
+			}*/
 
 			dataGridView1.ColumnCount = columns.Count;
 			dataGridView1.ColumnHeadersVisible = true;

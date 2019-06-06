@@ -67,8 +67,8 @@ namespace Повышение_квалификации
 				textBox1.Text = dataGridView1[1, e.RowIndex].Value.ToString();
 				textBox2.Text = dataGridView1[2, e.RowIndex].Value.ToString();
 				var obj = educationFormList.Items;
-				educationFormList.SelectedItem  = dataGridView1[3, e.RowIndex].Value.ToString();
-				coursTypeList.SelectedItem = dataGridView1[4, e.RowIndex].Value.ToString();
+				educationFormList.SelectedIndex = educationFormList.FindString(dataGridView1[3, e.RowIndex].Value.ToString());
+				coursTypeList.SelectedIndex = coursTypeList.FindString(dataGridView1[4, e.RowIndex].Value.ToString());
 
 				dateTimePicker1.Text = dataGridView1[5, e.RowIndex].Value.ToString();
 				dateTimePicker2.Text = dataGridView1[6, e.RowIndex].Value.ToString();
