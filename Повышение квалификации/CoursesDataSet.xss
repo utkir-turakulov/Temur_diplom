@@ -15,7 +15,7 @@
     <Shape ID="DesignTable:Роли1" ZOrder="1" X="339" Y="-3" Height="90" Width="197" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="0" />
     <Shape ID="DesignTable:ФормаОбучения1" ZOrder="8" X="338" Y="225" Height="90" Width="224" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="0" />
     <Shape ID="DesignTable:CourseNotPassedView" ZOrder="4" X="911" Y="249" Height="90" Width="270" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="0" />
-    <Shape ID="DesignTable:CoursePassedView1" ZOrder="16" X="615" Y="396" Height="90" Width="263" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="0" />
+    <Shape ID="DesignTable:CoursePassedView1" ZOrder="16" X="615" Y="396" Height="267" Width="252" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="216" />
     <Shape ID="DesignTable:CoursesView1" ZOrder="5" X="935" Y="122" Height="90" Width="219" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="0" />
     <Shape ID="DesignTable:TeacherCoursesView" ZOrder="10" X="621" Y="158" Height="172" Width="270" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
     <Shape ID="DesignTable:TeachersView" ZOrder="7" X="618" Y="-4" Height="90" Width="209" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="0" />

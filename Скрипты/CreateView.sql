@@ -23,11 +23,15 @@ on o.coursId = k.id;
 use Courses
 go
 create view CoursePassedView as
-select o.id,u.firstName,u.midleName,u.lastName,k.coursName,k.startDate,k.endDate,k.courseVolume from Обучение o
+select o.id,u.firstName,u.midleName,u.lastName,k.coursName,k.startDate,k.endDate,k.courseVolume,v.coursName as 'coursTypeName', f.educationType from Обучение o
 left join Пользователи u
 on o.teacherId = u.id
 left join Курсы k
 on k.id = o.coursId
+left join ВидКурса v
+on k.coursTypeId = v.id
+left join ФормаОбучения f
+on f.id = k.educationFormId
 where o.coursePassed = 1;
 
 

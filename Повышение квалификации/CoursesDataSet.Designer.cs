@@ -3641,6 +3641,10 @@ namespace Повышение_квалификации {
             
             private global::System.Data.DataColumn columncourseVolume;
             
+            private global::System.Data.DataColumn columncoursTypeName;
+            
+            private global::System.Data.DataColumn columneducationType;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public CoursePassedView1DataTable() {
@@ -3740,6 +3744,22 @@ namespace Повышение_квалификации {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn coursTypeNameColumn {
+                get {
+                    return this.columncoursTypeName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn educationTypeColumn {
+                get {
+                    return this.columneducationType;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3775,7 +3795,7 @@ namespace Повышение_квалификации {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public CoursePassedView1Row AddCoursePassedView1Row(int id, string firstName, string midleName, string lastName, string coursName, System.DateTime startDate, System.DateTime endDate, int courseVolume) {
+            public CoursePassedView1Row AddCoursePassedView1Row(int id, string firstName, string midleName, string lastName, string coursName, System.DateTime startDate, System.DateTime endDate, int courseVolume, string coursTypeName, string educationType) {
                 CoursePassedView1Row rowCoursePassedView1Row = ((CoursePassedView1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -3785,7 +3805,9 @@ namespace Повышение_квалификации {
                         coursName,
                         startDate,
                         endDate,
-                        courseVolume};
+                        courseVolume,
+                        coursTypeName,
+                        educationType};
                 rowCoursePassedView1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCoursePassedView1Row);
                 return rowCoursePassedView1Row;
@@ -3823,6 +3845,8 @@ namespace Повышение_квалификации {
                 this.columnstartDate = base.Columns["startDate"];
                 this.columnendDate = base.Columns["endDate"];
                 this.columncourseVolume = base.Columns["courseVolume"];
+                this.columncoursTypeName = base.Columns["coursTypeName"];
+                this.columneducationType = base.Columns["educationType"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3844,6 +3868,10 @@ namespace Повышение_квалификации {
                 base.Columns.Add(this.columnendDate);
                 this.columncourseVolume = new global::System.Data.DataColumn("courseVolume", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncourseVolume);
+                this.columncoursTypeName = new global::System.Data.DataColumn("coursTypeName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncoursTypeName);
+                this.columneducationType = new global::System.Data.DataColumn("educationType", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columneducationType);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AllowDBNull = false;
@@ -3852,6 +3880,8 @@ namespace Повышение_квалификации {
                 this.columnmidleName.MaxLength = 50;
                 this.columnlastName.MaxLength = 50;
                 this.columncoursName.MaxLength = 100;
+                this.columncoursTypeName.MaxLength = 50;
+                this.columneducationType.MaxLength = 20;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6755,6 +6785,38 @@ namespace Повышение_квалификации {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string coursTypeName {
+                get {
+                    try {
+                        return ((string)(this[this.tableCoursePassedView1.coursTypeNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'coursTypeName\' в таблице \'CoursePassedView1\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCoursePassedView1.coursTypeNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string educationType {
+                get {
+                    try {
+                        return ((string)(this[this.tableCoursePassedView1.educationTypeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'educationType\' в таблице \'CoursePassedView1\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCoursePassedView1.educationTypeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsfirstNameNull() {
                 return this.IsNull(this.tableCoursePassedView1.firstNameColumn);
             }
@@ -6835,6 +6897,30 @@ namespace Повышение_квалификации {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetcourseVolumeNull() {
                 this[this.tableCoursePassedView1.courseVolumeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IscoursTypeNameNull() {
+                return this.IsNull(this.tableCoursePassedView1.coursTypeNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetcoursTypeNameNull() {
+                this[this.tableCoursePassedView1.coursTypeNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IseducationTypeNull() {
+                return this.IsNull(this.tableCoursePassedView1.educationTypeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SeteducationTypeNull() {
+                this[this.tableCoursePassedView1.educationTypeColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -11467,6 +11553,8 @@ SELECT id, educationType FROM ФормаОбучения WHERE (id = @id)";
             tableMapping.ColumnMappings.Add("startDate", "startDate");
             tableMapping.ColumnMappings.Add("endDate", "endDate");
             tableMapping.ColumnMappings.Add("courseVolume", "courseVolume");
+            tableMapping.ColumnMappings.Add("coursTypeName", "coursTypeName");
+            tableMapping.ColumnMappings.Add("educationType", "educationType");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -11484,7 +11572,7 @@ SELECT id, educationType FROM ФормаОбучения WHERE (id = @id)";
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT id, firstName, midleName, lastName, coursName, startDate, endDate, courseV" +
-                "olume FROM dbo.CoursePassedView";
+                "olume, coursTypeName, educationType FROM CoursePassedView";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

@@ -31,7 +31,6 @@
 			this.button1 = new System.Windows.Forms.Button();
 			this.button3 = new System.Windows.Forms.Button();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.coursesDataSet = new Повышение_квалификации.CoursesDataSet();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.button2 = new System.Windows.Forms.Button();
@@ -44,11 +43,12 @@
 			this.firstName = new System.Windows.Forms.TextBox();
 			this.midleName = new System.Windows.Forms.TextBox();
 			this.courseVolume = new System.Windows.Forms.TextBox();
-			this.coursePassedViewTableAdapter = new Повышение_квалификации.CoursesDataSetTableAdapters.CoursePassedViewTableAdapter();
 			this.label8 = new System.Windows.Forms.Label();
 			this.label9 = new System.Windows.Forms.Label();
-			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.textBox2 = new System.Windows.Forms.TextBox();
+			this.courseType = new System.Windows.Forms.TextBox();
+			this.courseName = new System.Windows.Forms.TextBox();
+			this.coursesDataSet = new Повышение_квалификации.CoursesDataSet();
+			this.coursePassedViewTableAdapter = new Повышение_квалификации.CoursesDataSetTableAdapters.CoursePassedViewTableAdapter();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.coursesDataSet)).BeginInit();
 			this.SuspendLayout();
@@ -86,11 +86,6 @@
 			this.dataGridView1.ReadOnly = true;
 			this.dataGridView1.Size = new System.Drawing.Size(846, 350);
 			this.dataGridView1.TabIndex = 11;
-			// 
-			// coursesDataSet
-			// 
-			this.coursesDataSet.DataSetName = "CoursesDataSet";
-			this.coursesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
 			// 
 			// label1
 			// 
@@ -209,15 +204,11 @@
 			// 
 			// courseVolume
 			// 
-			this.courseVolume.Location = new System.Drawing.Point(1020, 279);
+			this.courseVolume.Location = new System.Drawing.Point(1020, 274);
 			this.courseVolume.Multiline = true;
 			this.courseVolume.Name = "courseVolume";
 			this.courseVolume.Size = new System.Drawing.Size(141, 25);
 			this.courseVolume.TabIndex = 23;
-			// 
-			// coursePassedViewTableAdapter
-			// 
-			this.coursePassedViewTableAdapter.ClearBeforeFill = true;
 			// 
 			// label8
 			// 
@@ -241,20 +232,29 @@
 			this.label9.TabIndex = 25;
 			this.label9.Text = "Вид курса";
 			// 
-			// textBox1
+			// courseType
 			// 
-			this.textBox1.Location = new System.Drawing.Point(1020, 371);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(173, 20);
-			this.textBox1.TabIndex = 26;
+			this.courseType.Location = new System.Drawing.Point(1035, 370);
+			this.courseType.Name = "courseType";
+			this.courseType.Size = new System.Drawing.Size(170, 20);
+			this.courseType.TabIndex = 26;
 			// 
-			// textBox2
+			// courseName
 			// 
-			this.textBox2.Location = new System.Drawing.Point(1035, 324);
-			this.textBox2.Multiline = true;
-			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(170, 25);
-			this.textBox2.TabIndex = 27;
+			this.courseName.Location = new System.Drawing.Point(1035, 324);
+			this.courseName.Multiline = true;
+			this.courseName.Name = "courseName";
+			this.courseName.Size = new System.Drawing.Size(170, 25);
+			this.courseName.TabIndex = 27;
+			// 
+			// coursesDataSet
+			// 
+			this.coursesDataSet.DataSetName = "CoursesDataSet";
+			this.coursesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+			// 
+			// coursePassedViewTableAdapter
+			// 
+			this.coursePassedViewTableAdapter.ClearBeforeFill = true;
 			// 
 			// СформироватьОтчет
 			// 
@@ -262,8 +262,8 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackgroundImage = global::Повышение_квалификации.Properties.Resources.фон;
 			this.ClientSize = new System.Drawing.Size(1262, 528);
-			this.Controls.Add(this.textBox2);
-			this.Controls.Add(this.textBox1);
+			this.Controls.Add(this.courseName);
+			this.Controls.Add(this.courseType);
 			this.Controls.Add(this.label9);
 			this.Controls.Add(this.label8);
 			this.Controls.Add(this.courseVolume);
@@ -328,7 +328,7 @@
 		private CoursesDataSetTableAdapters.CoursePassedViewTableAdapter coursePassedViewTableAdapter;
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.Label label9;
-		private System.Windows.Forms.TextBox textBox1;
-		private System.Windows.Forms.TextBox textBox2;
+		private System.Windows.Forms.TextBox courseType;
+		private System.Windows.Forms.TextBox courseName;
 	}
 }

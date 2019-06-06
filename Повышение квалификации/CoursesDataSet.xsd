@@ -541,7 +541,7 @@ SELECT id, educationType FROM ФормаОбучения WHERE (id = @id)</Comma
               <DbSource ConnectionRef="Курсы_ОбученяConnectionString (Settings)" DbObjectName="silverha_vpn06.dbo.CoursePassedView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT id, firstName, midleName, lastName, coursName, startDate, endDate, courseVolume FROM dbo.CoursePassedView</CommandText>
+                    <CommandText>SELECT id, firstName, midleName, lastName, coursName, startDate, endDate, courseVolume, coursTypeName, educationType FROM CoursePassedView</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -556,6 +556,8 @@ SELECT id, educationType FROM ФормаОбучения WHERE (id = @id)</Comma
               <Mapping SourceColumn="startDate" DataSetColumn="startDate" />
               <Mapping SourceColumn="endDate" DataSetColumn="endDate" />
               <Mapping SourceColumn="courseVolume" DataSetColumn="courseVolume" />
+              <Mapping SourceColumn="coursTypeName" DataSetColumn="coursTypeName" />
+              <Mapping SourceColumn="educationType" DataSetColumn="educationType" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -652,7 +654,7 @@ SELECT id, educationType FROM ФормаОбучения WHERE (id = @id)</Comma
   <xs:element name="CoursesDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="CoursesDataSet" msprop:Generator_UserDSName="CoursesDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Авторизация1" msprop:Generator_TableClassName="Авторизация1DataTable" msprop:Generator_TableVarName="tableАвторизация1" msprop:Generator_RowChangedName="Авторизация1RowChanged" msprop:Generator_TablePropName="Авторизация1" msprop:Generator_RowDeletingName="Авторизация1RowDeleting" msprop:Generator_RowChangingName="Авторизация1RowChanging" msprop:Generator_RowEvHandlerName="Авторизация1RowChangeEventHandler" msprop:Generator_RowDeletedName="Авторизация1RowDeleted" msprop:Generator_RowClassName="Авторизация1Row" msprop:Generator_UserTableName="Авторизация1" msprop:Generator_RowEvArgName="Авторизация1RowChangeEvent">
+        <xs:element name="Авторизация1" msprop:Generator_TableClassName="Авторизация1DataTable" msprop:Generator_TableVarName="tableАвторизация1" msprop:Generator_TablePropName="Авторизация1" msprop:Generator_RowDeletingName="Авторизация1RowDeleting" msprop:Generator_RowChangingName="Авторизация1RowChanging" msprop:Generator_RowEvHandlerName="Авторизация1RowChangeEventHandler" msprop:Generator_RowDeletedName="Авторизация1RowDeleted" msprop:Generator_UserTableName="Авторизация1" msprop:Generator_RowChangedName="Авторизация1RowChanged" msprop:Generator_RowEvArgName="Авторизация1RowChangeEvent" msprop:Generator_RowClassName="Авторизация1Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -673,7 +675,7 @@ SELECT id, educationType FROM ФормаОбучения WHERE (id = @id)</Comma
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ВидКурса1" msprop:Generator_TableClassName="ВидКурса1DataTable" msprop:Generator_TableVarName="tableВидКурса1" msprop:Generator_RowChangedName="ВидКурса1RowChanged" msprop:Generator_TablePropName="ВидКурса1" msprop:Generator_RowDeletingName="ВидКурса1RowDeleting" msprop:Generator_RowChangingName="ВидКурса1RowChanging" msprop:Generator_RowEvHandlerName="ВидКурса1RowChangeEventHandler" msprop:Generator_RowDeletedName="ВидКурса1RowDeleted" msprop:Generator_RowClassName="ВидКурса1Row" msprop:Generator_UserTableName="ВидКурса1" msprop:Generator_RowEvArgName="ВидКурса1RowChangeEvent">
+        <xs:element name="ВидКурса1" msprop:Generator_TableClassName="ВидКурса1DataTable" msprop:Generator_TableVarName="tableВидКурса1" msprop:Generator_TablePropName="ВидКурса1" msprop:Generator_RowDeletingName="ВидКурса1RowDeleting" msprop:Generator_RowChangingName="ВидКурса1RowChanging" msprop:Generator_RowEvHandlerName="ВидКурса1RowChangeEventHandler" msprop:Generator_RowDeletedName="ВидКурса1RowDeleted" msprop:Generator_UserTableName="ВидКурса1" msprop:Generator_RowChangedName="ВидКурса1RowChanged" msprop:Generator_RowEvArgName="ВидКурса1RowChangeEvent" msprop:Generator_RowClassName="ВидКурса1Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -687,7 +689,7 @@ SELECT id, educationType FROM ФормаОбучения WHERE (id = @id)</Comma
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Курсы" msprop:Generator_TableClassName="КурсыDataTable" msprop:Generator_TableVarName="tableКурсы" msprop:Generator_RowChangedName="КурсыRowChanged" msprop:Generator_TablePropName="Курсы" msprop:Generator_RowDeletingName="КурсыRowDeleting" msprop:Generator_RowChangingName="КурсыRowChanging" msprop:Generator_RowEvHandlerName="КурсыRowChangeEventHandler" msprop:Generator_RowDeletedName="КурсыRowDeleted" msprop:Generator_RowClassName="КурсыRow" msprop:Generator_UserTableName="Курсы" msprop:Generator_RowEvArgName="КурсыRowChangeEvent">
+        <xs:element name="Курсы" msprop:Generator_TableClassName="КурсыDataTable" msprop:Generator_TableVarName="tableКурсы" msprop:Generator_TablePropName="Курсы" msprop:Generator_RowDeletingName="КурсыRowDeleting" msprop:Generator_RowChangingName="КурсыRowChanging" msprop:Generator_RowEvHandlerName="КурсыRowChangeEventHandler" msprop:Generator_RowDeletedName="КурсыRowDeleted" msprop:Generator_UserTableName="Курсы" msprop:Generator_RowChangedName="КурсыRowChanged" msprop:Generator_RowEvArgName="КурсыRowChangeEvent" msprop:Generator_RowClassName="КурсыRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -706,7 +708,7 @@ SELECT id, educationType FROM ФормаОбучения WHERE (id = @id)</Comma
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Обучение1" msprop:Generator_TableClassName="Обучение1DataTable" msprop:Generator_TableVarName="tableОбучение1" msprop:Generator_RowChangedName="Обучение1RowChanged" msprop:Generator_TablePropName="Обучение1" msprop:Generator_RowDeletingName="Обучение1RowDeleting" msprop:Generator_RowChangingName="Обучение1RowChanging" msprop:Generator_RowEvHandlerName="Обучение1RowChangeEventHandler" msprop:Generator_RowDeletedName="Обучение1RowDeleted" msprop:Generator_RowClassName="Обучение1Row" msprop:Generator_UserTableName="Обучение1" msprop:Generator_RowEvArgName="Обучение1RowChangeEvent">
+        <xs:element name="Обучение1" msprop:Generator_TableClassName="Обучение1DataTable" msprop:Generator_TableVarName="tableОбучение1" msprop:Generator_TablePropName="Обучение1" msprop:Generator_RowDeletingName="Обучение1RowDeleting" msprop:Generator_RowChangingName="Обучение1RowChanging" msprop:Generator_RowEvHandlerName="Обучение1RowChangeEventHandler" msprop:Generator_RowDeletedName="Обучение1RowDeleted" msprop:Generator_UserTableName="Обучение1" msprop:Generator_RowChangedName="Обучение1RowChanged" msprop:Generator_RowEvArgName="Обучение1RowChangeEvent" msprop:Generator_RowClassName="Обучение1Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -719,7 +721,7 @@ SELECT id, educationType FROM ФормаОбучения WHERE (id = @id)</Comma
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Пользователи1" msprop:Generator_TableClassName="Пользователи1DataTable" msprop:Generator_TableVarName="tableПользователи1" msprop:Generator_RowChangedName="Пользователи1RowChanged" msprop:Generator_TablePropName="Пользователи1" msprop:Generator_RowDeletingName="Пользователи1RowDeleting" msprop:Generator_RowChangingName="Пользователи1RowChanging" msprop:Generator_RowEvHandlerName="Пользователи1RowChangeEventHandler" msprop:Generator_RowDeletedName="Пользователи1RowDeleted" msprop:Generator_RowClassName="Пользователи1Row" msprop:Generator_UserTableName="Пользователи1" msprop:Generator_RowEvArgName="Пользователи1RowChangeEvent">
+        <xs:element name="Пользователи1" msprop:Generator_TableClassName="Пользователи1DataTable" msprop:Generator_TableVarName="tableПользователи1" msprop:Generator_TablePropName="Пользователи1" msprop:Generator_RowDeletingName="Пользователи1RowDeleting" msprop:Generator_RowChangingName="Пользователи1RowChanging" msprop:Generator_RowEvHandlerName="Пользователи1RowChangeEventHandler" msprop:Generator_RowDeletedName="Пользователи1RowDeleted" msprop:Generator_UserTableName="Пользователи1" msprop:Generator_RowChangedName="Пользователи1RowChanged" msprop:Generator_RowEvArgName="Пользователи1RowChangeEvent" msprop:Generator_RowClassName="Пользователи1Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -750,7 +752,7 @@ SELECT id, educationType FROM ФормаОбучения WHERE (id = @id)</Comma
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Преподаватели" msprop:Generator_TableClassName="ПреподавателиDataTable" msprop:Generator_TableVarName="tableПреподаватели" msprop:Generator_RowChangedName="ПреподавателиRowChanged" msprop:Generator_TablePropName="Преподаватели" msprop:Generator_RowDeletingName="ПреподавателиRowDeleting" msprop:Generator_RowChangingName="ПреподавателиRowChanging" msprop:Generator_RowEvHandlerName="ПреподавателиRowChangeEventHandler" msprop:Generator_RowDeletedName="ПреподавателиRowDeleted" msprop:Generator_RowClassName="ПреподавателиRow" msprop:Generator_UserTableName="Преподаватели" msprop:Generator_RowEvArgName="ПреподавателиRowChangeEvent">
+        <xs:element name="Преподаватели" msprop:Generator_TableClassName="ПреподавателиDataTable" msprop:Generator_TableVarName="tableПреподаватели" msprop:Generator_TablePropName="Преподаватели" msprop:Generator_RowDeletingName="ПреподавателиRowDeleting" msprop:Generator_RowChangingName="ПреподавателиRowChanging" msprop:Generator_RowEvHandlerName="ПреподавателиRowChangeEventHandler" msprop:Generator_RowDeletedName="ПреподавателиRowDeleted" msprop:Generator_UserTableName="Преподаватели" msprop:Generator_RowChangedName="ПреподавателиRowChanged" msprop:Generator_RowEvArgName="ПреподавателиRowChangeEvent" msprop:Generator_RowClassName="ПреподавателиRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -758,7 +760,7 @@ SELECT id, educationType FROM ФормаОбучения WHERE (id = @id)</Comma
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Роли1" msprop:Generator_TableClassName="Роли1DataTable" msprop:Generator_TableVarName="tableРоли1" msprop:Generator_RowChangedName="Роли1RowChanged" msprop:Generator_TablePropName="Роли1" msprop:Generator_RowDeletingName="Роли1RowDeleting" msprop:Generator_RowChangingName="Роли1RowChanging" msprop:Generator_RowEvHandlerName="Роли1RowChangeEventHandler" msprop:Generator_RowDeletedName="Роли1RowDeleted" msprop:Generator_RowClassName="Роли1Row" msprop:Generator_UserTableName="Роли1" msprop:Generator_RowEvArgName="Роли1RowChangeEvent">
+        <xs:element name="Роли1" msprop:Generator_TableClassName="Роли1DataTable" msprop:Generator_TableVarName="tableРоли1" msprop:Generator_TablePropName="Роли1" msprop:Generator_RowDeletingName="Роли1RowDeleting" msprop:Generator_RowChangingName="Роли1RowChanging" msprop:Generator_RowEvHandlerName="Роли1RowChangeEventHandler" msprop:Generator_RowDeletedName="Роли1RowDeleted" msprop:Generator_UserTableName="Роли1" msprop:Generator_RowChangedName="Роли1RowChanged" msprop:Generator_RowEvArgName="Роли1RowChangeEvent" msprop:Generator_RowClassName="Роли1Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -772,7 +774,7 @@ SELECT id, educationType FROM ФормаОбучения WHERE (id = @id)</Comma
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ФормаОбучения1" msprop:Generator_TableClassName="ФормаОбучения1DataTable" msprop:Generator_TableVarName="tableФормаОбучения1" msprop:Generator_RowChangedName="ФормаОбучения1RowChanged" msprop:Generator_TablePropName="ФормаОбучения1" msprop:Generator_RowDeletingName="ФормаОбучения1RowDeleting" msprop:Generator_RowChangingName="ФормаОбучения1RowChanging" msprop:Generator_RowEvHandlerName="ФормаОбучения1RowChangeEventHandler" msprop:Generator_RowDeletedName="ФормаОбучения1RowDeleted" msprop:Generator_RowClassName="ФормаОбучения1Row" msprop:Generator_UserTableName="ФормаОбучения1" msprop:Generator_RowEvArgName="ФормаОбучения1RowChangeEvent">
+        <xs:element name="ФормаОбучения1" msprop:Generator_TableClassName="ФормаОбучения1DataTable" msprop:Generator_TableVarName="tableФормаОбучения1" msprop:Generator_TablePropName="ФормаОбучения1" msprop:Generator_RowDeletingName="ФормаОбучения1RowDeleting" msprop:Generator_RowChangingName="ФормаОбучения1RowChanging" msprop:Generator_RowEvHandlerName="ФормаОбучения1RowChangeEventHandler" msprop:Generator_RowDeletedName="ФормаОбучения1RowDeleted" msprop:Generator_UserTableName="ФормаОбучения1" msprop:Generator_RowChangedName="ФормаОбучения1RowChanged" msprop:Generator_RowEvArgName="ФормаОбучения1RowChangeEvent" msprop:Generator_RowClassName="ФормаОбучения1Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -786,7 +788,7 @@ SELECT id, educationType FROM ФормаОбучения WHERE (id = @id)</Comma
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="CourseNotPassedView" msprop:Generator_TableClassName="CourseNotPassedViewDataTable" msprop:Generator_TableVarName="tableCourseNotPassedView" msprop:Generator_RowChangedName="CourseNotPassedViewRowChanged" msprop:Generator_TablePropName="CourseNotPassedView" msprop:Generator_RowDeletingName="CourseNotPassedViewRowDeleting" msprop:Generator_RowChangingName="CourseNotPassedViewRowChanging" msprop:Generator_RowEvHandlerName="CourseNotPassedViewRowChangeEventHandler" msprop:Generator_RowDeletedName="CourseNotPassedViewRowDeleted" msprop:Generator_RowClassName="CourseNotPassedViewRow" msprop:Generator_UserTableName="CourseNotPassedView" msprop:Generator_RowEvArgName="CourseNotPassedViewRowChangeEvent">
+        <xs:element name="CourseNotPassedView" msprop:Generator_TableClassName="CourseNotPassedViewDataTable" msprop:Generator_TableVarName="tableCourseNotPassedView" msprop:Generator_TablePropName="CourseNotPassedView" msprop:Generator_RowDeletingName="CourseNotPassedViewRowDeleting" msprop:Generator_RowChangingName="CourseNotPassedViewRowChanging" msprop:Generator_RowEvHandlerName="CourseNotPassedViewRowChangeEventHandler" msprop:Generator_RowDeletedName="CourseNotPassedViewRowDeleted" msprop:Generator_UserTableName="CourseNotPassedView" msprop:Generator_RowChangedName="CourseNotPassedViewRowChanged" msprop:Generator_RowEvArgName="CourseNotPassedViewRowChangeEvent" msprop:Generator_RowClassName="CourseNotPassedViewRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -838,7 +840,7 @@ SELECT id, educationType FROM ФормаОбучения WHERE (id = @id)</Comma
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="CoursePassedView1" msprop:Generator_TableClassName="CoursePassedView1DataTable" msprop:Generator_TableVarName="tableCoursePassedView1" msprop:Generator_RowChangedName="CoursePassedView1RowChanged" msprop:Generator_TablePropName="CoursePassedView1" msprop:Generator_RowDeletingName="CoursePassedView1RowDeleting" msprop:Generator_RowChangingName="CoursePassedView1RowChanging" msprop:Generator_RowEvHandlerName="CoursePassedView1RowChangeEventHandler" msprop:Generator_RowDeletedName="CoursePassedView1RowDeleted" msprop:Generator_RowClassName="CoursePassedView1Row" msprop:Generator_UserTableName="CoursePassedView1" msprop:Generator_RowEvArgName="CoursePassedView1RowChangeEvent">
+        <xs:element name="CoursePassedView1" msprop:Generator_TableClassName="CoursePassedView1DataTable" msprop:Generator_TableVarName="tableCoursePassedView1" msprop:Generator_TablePropName="CoursePassedView1" msprop:Generator_RowDeletingName="CoursePassedView1RowDeleting" msprop:Generator_RowChangingName="CoursePassedView1RowChanging" msprop:Generator_RowEvHandlerName="CoursePassedView1RowChangeEventHandler" msprop:Generator_RowDeletedName="CoursePassedView1RowDeleted" msprop:Generator_UserTableName="CoursePassedView1" msprop:Generator_RowChangedName="CoursePassedView1RowChanged" msprop:Generator_RowEvArgName="CoursePassedView1RowChangeEvent" msprop:Generator_RowClassName="CoursePassedView1Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -873,10 +875,24 @@ SELECT id, educationType FROM ФормаОбучения WHERE (id = @id)</Comma
               <xs:element name="startDate" msprop:Generator_ColumnVarNameInTable="columnstartDate" msprop:Generator_ColumnPropNameInRow="startDate" msprop:Generator_ColumnPropNameInTable="startDateColumn" msprop:Generator_UserColumnName="startDate" type="xs:dateTime" minOccurs="0" />
               <xs:element name="endDate" msprop:Generator_ColumnVarNameInTable="columnendDate" msprop:Generator_ColumnPropNameInRow="endDate" msprop:Generator_ColumnPropNameInTable="endDateColumn" msprop:Generator_UserColumnName="endDate" type="xs:dateTime" minOccurs="0" />
               <xs:element name="courseVolume" msprop:Generator_ColumnVarNameInTable="columncourseVolume" msprop:Generator_ColumnPropNameInRow="courseVolume" msprop:Generator_ColumnPropNameInTable="courseVolumeColumn" msprop:Generator_UserColumnName="courseVolume" type="xs:int" minOccurs="0" />
+              <xs:element name="coursTypeName" msprop:Generator_ColumnVarNameInTable="columncoursTypeName" msprop:Generator_ColumnPropNameInRow="coursTypeName" msprop:Generator_ColumnPropNameInTable="coursTypeNameColumn" msprop:Generator_UserColumnName="coursTypeName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="educationType" msprop:Generator_ColumnVarNameInTable="columneducationType" msprop:Generator_ColumnPropNameInRow="educationType" msprop:Generator_ColumnPropNameInTable="educationTypeColumn" msprop:Generator_UserColumnName="educationType" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="CoursesView1" msprop:Generator_TableClassName="CoursesView1DataTable" msprop:Generator_TableVarName="tableCoursesView1" msprop:Generator_RowChangedName="CoursesView1RowChanged" msprop:Generator_TablePropName="CoursesView1" msprop:Generator_RowDeletingName="CoursesView1RowDeleting" msprop:Generator_RowChangingName="CoursesView1RowChanging" msprop:Generator_RowEvHandlerName="CoursesView1RowChangeEventHandler" msprop:Generator_RowDeletedName="CoursesView1RowDeleted" msprop:Generator_RowClassName="CoursesView1Row" msprop:Generator_UserTableName="CoursesView1" msprop:Generator_RowEvArgName="CoursesView1RowChangeEvent">
+        <xs:element name="CoursesView1" msprop:Generator_TableClassName="CoursesView1DataTable" msprop:Generator_TableVarName="tableCoursesView1" msprop:Generator_TablePropName="CoursesView1" msprop:Generator_RowDeletingName="CoursesView1RowDeleting" msprop:Generator_RowChangingName="CoursesView1RowChanging" msprop:Generator_RowEvHandlerName="CoursesView1RowChangeEventHandler" msprop:Generator_RowDeletedName="CoursesView1RowDeleted" msprop:Generator_UserTableName="CoursesView1" msprop:Generator_RowChangedName="CoursesView1RowChanged" msprop:Generator_RowEvArgName="CoursesView1RowChangeEvent" msprop:Generator_RowClassName="CoursesView1Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -907,7 +923,7 @@ SELECT id, educationType FROM ФормаОбучения WHERE (id = @id)</Comma
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TeacherCoursesView" msprop:Generator_TableClassName="TeacherCoursesViewDataTable" msprop:Generator_TableVarName="tableTeacherCoursesView" msprop:Generator_RowChangedName="TeacherCoursesViewRowChanged" msprop:Generator_TablePropName="TeacherCoursesView" msprop:Generator_RowDeletingName="TeacherCoursesViewRowDeleting" msprop:Generator_RowChangingName="TeacherCoursesViewRowChanging" msprop:Generator_RowEvHandlerName="TeacherCoursesViewRowChangeEventHandler" msprop:Generator_RowDeletedName="TeacherCoursesViewRowDeleted" msprop:Generator_RowClassName="TeacherCoursesViewRow" msprop:Generator_UserTableName="TeacherCoursesView" msprop:Generator_RowEvArgName="TeacherCoursesViewRowChangeEvent">
+        <xs:element name="TeacherCoursesView" msprop:Generator_TableClassName="TeacherCoursesViewDataTable" msprop:Generator_TableVarName="tableTeacherCoursesView" msprop:Generator_TablePropName="TeacherCoursesView" msprop:Generator_RowDeletingName="TeacherCoursesViewRowDeleting" msprop:Generator_RowChangingName="TeacherCoursesViewRowChanging" msprop:Generator_RowEvHandlerName="TeacherCoursesViewRowChangeEventHandler" msprop:Generator_RowDeletedName="TeacherCoursesViewRowDeleted" msprop:Generator_UserTableName="TeacherCoursesView" msprop:Generator_RowChangedName="TeacherCoursesViewRowChanged" msprop:Generator_RowEvArgName="TeacherCoursesViewRowChangeEvent" msprop:Generator_RowClassName="TeacherCoursesViewRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -936,7 +952,7 @@ SELECT id, educationType FROM ФормаОбучения WHERE (id = @id)</Comma
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TeachersView" msprop:Generator_TableClassName="TeachersViewDataTable" msprop:Generator_TableVarName="tableTeachersView" msprop:Generator_RowChangedName="TeachersViewRowChanged" msprop:Generator_TablePropName="TeachersView" msprop:Generator_RowDeletingName="TeachersViewRowDeleting" msprop:Generator_RowChangingName="TeachersViewRowChanging" msprop:Generator_RowEvHandlerName="TeachersViewRowChangeEventHandler" msprop:Generator_RowDeletedName="TeachersViewRowDeleted" msprop:Generator_RowClassName="TeachersViewRow" msprop:Generator_UserTableName="TeachersView" msprop:Generator_RowEvArgName="TeachersViewRowChangeEvent">
+        <xs:element name="TeachersView" msprop:Generator_TableClassName="TeachersViewDataTable" msprop:Generator_TableVarName="tableTeachersView" msprop:Generator_TablePropName="TeachersView" msprop:Generator_RowDeletingName="TeachersViewRowDeleting" msprop:Generator_RowChangingName="TeachersViewRowChanging" msprop:Generator_RowEvHandlerName="TeachersViewRowChangeEventHandler" msprop:Generator_RowDeletedName="TeachersViewRowDeleted" msprop:Generator_UserTableName="TeachersView" msprop:Generator_RowChangedName="TeachersViewRowChanged" msprop:Generator_RowEvArgName="TeachersViewRowChangeEvent" msprop:Generator_RowClassName="TeachersViewRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -965,7 +981,7 @@ SELECT id, educationType FROM ФормаОбучения WHERE (id = @id)</Comma
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="UserData1" msprop:Generator_TableClassName="UserData1DataTable" msprop:Generator_TableVarName="tableUserData1" msprop:Generator_RowChangedName="UserData1RowChanged" msprop:Generator_TablePropName="UserData1" msprop:Generator_RowDeletingName="UserData1RowDeleting" msprop:Generator_RowChangingName="UserData1RowChanging" msprop:Generator_RowEvHandlerName="UserData1RowChangeEventHandler" msprop:Generator_RowDeletedName="UserData1RowDeleted" msprop:Generator_RowClassName="UserData1Row" msprop:Generator_UserTableName="UserData1" msprop:Generator_RowEvArgName="UserData1RowChangeEvent">
+        <xs:element name="UserData1" msprop:Generator_TableClassName="UserData1DataTable" msprop:Generator_TableVarName="tableUserData1" msprop:Generator_TablePropName="UserData1" msprop:Generator_RowDeletingName="UserData1RowDeleting" msprop:Generator_RowChangingName="UserData1RowChanging" msprop:Generator_RowEvHandlerName="UserData1RowChangeEventHandler" msprop:Generator_RowDeletedName="UserData1RowDeleted" msprop:Generator_UserTableName="UserData1" msprop:Generator_RowChangedName="UserData1RowChanged" msprop:Generator_RowEvArgName="UserData1RowChangeEvent" msprop:Generator_RowClassName="UserData1Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -1076,12 +1092,12 @@ SELECT id, educationType FROM ФормаОбучения WHERE (id = @id)</Comma
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK__Курсы__coursType__22AA29962" msdata:parent="ВидКурса1" msdata:child="Курсы" msdata:parentkey="id" msdata:childkey="coursTypeId" msprop:Generator_UserChildTable="Курсы" msprop:Generator_ChildPropName="GetКурсыRows" msprop:Generator_UserRelationName="FK__Курсы__coursType__22AA29962" msprop:Generator_RelationVarName="relationFK__Курсы__coursType__22AA29962" msprop:Generator_UserParentTable="ВидКурса1" msprop:Generator_ParentPropName="ВидКурса1Row" />
-      <msdata:Relationship name="FK__Курсы__education__239E4DCF2" msdata:parent="ФормаОбучения1" msdata:child="Курсы" msdata:parentkey="id" msdata:childkey="educationFormId" msprop:Generator_UserChildTable="Курсы" msprop:Generator_ChildPropName="GetКурсы1Rows" msprop:Generator_UserRelationName="FK__Курсы__education__239E4DCF2" msprop:Generator_ParentPropName="ФормаОбучения1Row" msprop:Generator_RelationVarName="relationFK__Курсы__education__239E4DCF2" msprop:Generator_UserParentTable="ФормаОбучения1" />
-      <msdata:Relationship name="FK__Обучение__coursI__249272082" msdata:parent="Курсы" msdata:child="Обучение1" msdata:parentkey="id" msdata:childkey="coursId" msprop:Generator_UserChildTable="Обучение1" msprop:Generator_ChildPropName="GetОбучение1Rows" msprop:Generator_UserRelationName="FK__Обучение__coursI__249272082" msprop:Generator_RelationVarName="relationFK__Обучение__coursI__249272082" msprop:Generator_UserParentTable="Курсы" msprop:Generator_ParentPropName="Курсы1Row" />
-      <msdata:Relationship name="FK_Обучение_teacherId_Пользователи3" msdata:parent="Пользователи1" msdata:child="Обучение1" msdata:parentkey="id" msdata:childkey="teacherId" msprop:Generator_UserChildTable="Обучение1" msprop:Generator_ChildPropName="GetОбучение1Rows" msprop:Generator_UserRelationName="FK_Обучение_teacherId_Пользователи3" msprop:Generator_ParentPropName="Пользователи1Row" msprop:Generator_RelationVarName="relationFK_Обучение_teacherId_Пользователи3" msprop:Generator_UserParentTable="Пользователи1" />
-      <msdata:Relationship name="FK_ПользователиАвторизация3" msdata:parent="Авторизация1" msdata:child="Пользователи1" msdata:parentkey="id" msdata:childkey="authId" msprop:Generator_UserChildTable="Пользователи1" msprop:Generator_ChildPropName="GetПользователи1Rows" msprop:Generator_UserRelationName="FK_ПользователиАвторизация3" msprop:Generator_RelationVarName="relationFK_ПользователиАвторизация3" msprop:Generator_UserParentTable="Авторизация1" msprop:Generator_ParentPropName="Авторизация1Row" />
-      <msdata:Relationship name="FK_ПользователиРоли3" msdata:parent="Роли1" msdata:child="Пользователи1" msdata:parentkey="id" msdata:childkey="roleId" msprop:Generator_UserChildTable="Пользователи1" msprop:Generator_ChildPropName="GetПользователи1Rows" msprop:Generator_UserRelationName="FK_ПользователиРоли3" msprop:Generator_ParentPropName="Роли1Row" msprop:Generator_RelationVarName="relationFK_ПользователиРоли3" msprop:Generator_UserParentTable="Роли1" />
+      <msdata:Relationship name="FK__Курсы__coursType__22AA29962" msdata:parent="ВидКурса1" msdata:child="Курсы" msdata:parentkey="id" msdata:childkey="coursTypeId" msprop:Generator_UserChildTable="Курсы" msprop:Generator_ChildPropName="GetКурсыRows" msprop:Generator_UserRelationName="FK__Курсы__coursType__22AA29962" msprop:Generator_ParentPropName="ВидКурса1Row" msprop:Generator_RelationVarName="relationFK__Курсы__coursType__22AA29962" msprop:Generator_UserParentTable="ВидКурса1" />
+      <msdata:Relationship name="FK__Курсы__education__239E4DCF2" msdata:parent="ФормаОбучения1" msdata:child="Курсы" msdata:parentkey="id" msdata:childkey="educationFormId" msprop:Generator_UserChildTable="Курсы" msprop:Generator_ChildPropName="GetКурсы1Rows" msprop:Generator_UserRelationName="FK__Курсы__education__239E4DCF2" msprop:Generator_RelationVarName="relationFK__Курсы__education__239E4DCF2" msprop:Generator_UserParentTable="ФормаОбучения1" msprop:Generator_ParentPropName="ФормаОбучения1Row" />
+      <msdata:Relationship name="FK__Обучение__coursI__249272082" msdata:parent="Курсы" msdata:child="Обучение1" msdata:parentkey="id" msdata:childkey="coursId" msprop:Generator_UserChildTable="Обучение1" msprop:Generator_ChildPropName="GetОбучение1Rows" msprop:Generator_UserRelationName="FK__Обучение__coursI__249272082" msprop:Generator_ParentPropName="Курсы1Row" msprop:Generator_RelationVarName="relationFK__Обучение__coursI__249272082" msprop:Generator_UserParentTable="Курсы" />
+      <msdata:Relationship name="FK_Обучение_teacherId_Пользователи3" msdata:parent="Пользователи1" msdata:child="Обучение1" msdata:parentkey="id" msdata:childkey="teacherId" msprop:Generator_UserChildTable="Обучение1" msprop:Generator_ChildPropName="GetОбучение1Rows" msprop:Generator_UserRelationName="FK_Обучение_teacherId_Пользователи3" msprop:Generator_RelationVarName="relationFK_Обучение_teacherId_Пользователи3" msprop:Generator_UserParentTable="Пользователи1" msprop:Generator_ParentPropName="Пользователи1Row" />
+      <msdata:Relationship name="FK_ПользователиАвторизация3" msdata:parent="Авторизация1" msdata:child="Пользователи1" msdata:parentkey="id" msdata:childkey="authId" msprop:Generator_UserChildTable="Пользователи1" msprop:Generator_ChildPropName="GetПользователи1Rows" msprop:Generator_UserRelationName="FK_ПользователиАвторизация3" msprop:Generator_ParentPropName="Авторизация1Row" msprop:Generator_RelationVarName="relationFK_ПользователиАвторизация3" msprop:Generator_UserParentTable="Авторизация1" />
+      <msdata:Relationship name="FK_ПользователиРоли3" msdata:parent="Роли1" msdata:child="Пользователи1" msdata:parentkey="id" msdata:childkey="roleId" msprop:Generator_UserChildTable="Пользователи1" msprop:Generator_ChildPropName="GetПользователи1Rows" msprop:Generator_UserRelationName="FK_ПользователиРоли3" msprop:Generator_RelationVarName="relationFK_ПользователиРоли3" msprop:Generator_UserParentTable="Роли1" msprop:Generator_ParentPropName="Роли1Row" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

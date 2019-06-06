@@ -143,7 +143,11 @@ namespace Повышение_квалификации
 				!string.IsNullOrEmpty(lastName.Text) &&
 				!string.IsNullOrWhiteSpace(lastName.Text) ||
 				!string.IsNullOrEmpty(courseVolume.Text) &&
-				!string.IsNullOrWhiteSpace(courseVolume.Text)
+				!string.IsNullOrWhiteSpace(courseVolume.Text) ||
+				!string.IsNullOrEmpty(courseType.Text) &&
+				!string.IsNullOrWhiteSpace(courseType.Text) ||
+				!string.IsNullOrEmpty(courseName.Text) &&
+				!string.IsNullOrWhiteSpace(courseName.Text)
 				)
 			{
 				coursesQuery += " where ";
@@ -199,16 +203,42 @@ namespace Повышение_квалификации
 				coursesQuery += string.Format("courseVolume = '{0}'", courseVolume.Text);
 			}
 
+			if (!string.IsNullOrEmpty(courseName.Text) &&
+				!string.IsNullOrWhiteSpace(courseName.Text))
+			{
+				if (filterParamCount > 1)
+				{
+					coursesQuery += " and ";
+				}
+
+				filterParamCount++;
+				coursesQuery += string.Format("coursName = N'{0}'", courseName.Text);
+			}
+
+			if (!string.IsNullOrEmpty(courseType.Text) &&
+				!string.IsNullOrWhiteSpace(courseType.Text))
+			{
+				if (filterParamCount > 1)
+				{
+					coursesQuery += " and ";
+				}
+
+				filterParamCount++;
+				coursesQuery += string.Format("coursTypeName = N'{0}'", courseType.Text);
+			}
+
 			DbWorker dbWorker = new DbWorker();
 			List<string> columns = new List<string>() {
 				"Код",
 				"Имя",
 				"Отчество",
 				"Фамилия",
-				"Наименование курса",
+				"Название курса",
 				"Дата начала курса",
 				"Дата окончания курса",
-				"Объем курса"
+				"Объем курса",
+				"Вид курса",
+				"Форма обучения"
 			};
 
 			dataGridView1.ColumnCount = columns.Count;
@@ -229,7 +259,7 @@ namespace Повышение_квалификации
 				SqlDataReader reader = command.ExecuteReader();
 				while (reader.Read())
 				{
-					dataGridView1.Rows.Add(reader.GetInt32(0), reader.GetValue(1), reader.GetValue(2), reader.GetValue(3), reader.GetValue(4), reader.GetValue(5), reader.GetValue(6), reader.GetValue(7));
+					dataGridView1.Rows.Add(reader.GetInt32(0), reader.GetValue(1), reader.GetValue(2), reader.GetValue(3), reader.GetValue(4), reader.GetValue(5), reader.GetValue(6), reader.GetValue(7),reader.GetValue(8), reader.GetValue(9));
 				}
 				connection.Close();
 			}
