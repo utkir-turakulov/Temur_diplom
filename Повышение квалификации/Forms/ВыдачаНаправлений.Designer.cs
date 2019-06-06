@@ -32,35 +32,6 @@
 			this.button1 = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.courseNotPassedViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.coursesDataSet = new Повышение_квалификации.CoursesDataSet();
-			this.button2 = new System.Windows.Forms.Button();
-			this.button3 = new System.Windows.Forms.Button();
-			this.tabControl1 = new System.Windows.Forms.TabControl();
-			this.tabPage1 = new System.Windows.Forms.TabPage();
-			this.tabPage2 = new System.Windows.Forms.TabPage();
-			this.label3 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
-			this.dataGridView3 = new System.Windows.Forms.DataGridView();
-			this.coursesView1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.dataGridView2 = new System.Windows.Forms.DataGridView();
-			this.teachersViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.teachersViewTableAdapter = new Повышение_квалификации.CoursesDataSetTableAdapters.TeachersViewTableAdapter();
-			this.courseNotPassedViewTableAdapter = new Повышение_квалификации.CoursesDataSetTableAdapters.CourseNotPassedViewTableAdapter();
-			this.coursesViewTableAdapter = new Повышение_квалификации.CoursesDataSetTableAdapters.CoursesViewTableAdapter();
-			this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-			this.idDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.firstNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.midleNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.lastNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dateOfBirthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.coursNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.courseVolumeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.educationTypeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.courseTypeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.startDateDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.endDateDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.midleNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,6 +42,35 @@
 			this.endDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.coursTypeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.educationTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.courseNotPassedViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.coursesDataSet = new Повышение_квалификации.CoursesDataSet();
+			this.button2 = new System.Windows.Forms.Button();
+			this.button3 = new System.Windows.Forms.Button();
+			this.tabControl1 = new System.Windows.Forms.TabControl();
+			this.tabPage1 = new System.Windows.Forms.TabPage();
+			this.tabPage2 = new System.Windows.Forms.TabPage();
+			this.label3 = new System.Windows.Forms.Label();
+			this.label2 = new System.Windows.Forms.Label();
+			this.dataGridView3 = new System.Windows.Forms.DataGridView();
+			this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.coursNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.courseVolumeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.educationTypeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.courseTypeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.startDateDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.endDateDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.coursesView1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.dataGridView2 = new System.Windows.Forms.DataGridView();
+			this.idDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.firstNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.midleNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.lastNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dateOfBirthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.teachersViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.teachersViewTableAdapter = new Повышение_квалификации.CoursesDataSetTableAdapters.TeachersViewTableAdapter();
+			this.courseNotPassedViewTableAdapter = new Повышение_квалификации.CoursesDataSetTableAdapters.CourseNotPassedViewTableAdapter();
+			this.coursesViewTableAdapter = new Повышение_квалификации.CoursesDataSetTableAdapters.CoursesViewTableAdapter();
+			this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.courseNotPassedViewBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.coursesDataSet)).BeginInit();
@@ -127,6 +127,76 @@
 			this.dataGridView1.ReadOnly = true;
 			this.dataGridView1.Size = new System.Drawing.Size(1050, 328);
 			this.dataGridView1.TabIndex = 7;
+			// 
+			// idDataGridViewTextBoxColumn
+			// 
+			this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+			this.idDataGridViewTextBoxColumn.HeaderText = "Код";
+			this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+			this.idDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// firstNameDataGridViewTextBoxColumn
+			// 
+			this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "firstName";
+			this.firstNameDataGridViewTextBoxColumn.HeaderText = "Имя";
+			this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+			this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// midleNameDataGridViewTextBoxColumn
+			// 
+			this.midleNameDataGridViewTextBoxColumn.DataPropertyName = "midleName";
+			this.midleNameDataGridViewTextBoxColumn.HeaderText = "Отчество";
+			this.midleNameDataGridViewTextBoxColumn.Name = "midleNameDataGridViewTextBoxColumn";
+			this.midleNameDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// lastNameDataGridViewTextBoxColumn
+			// 
+			this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "lastName";
+			this.lastNameDataGridViewTextBoxColumn.HeaderText = "Фамилия";
+			this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+			this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// coursNameDataGridViewTextBoxColumn
+			// 
+			this.coursNameDataGridViewTextBoxColumn.DataPropertyName = "coursName";
+			this.coursNameDataGridViewTextBoxColumn.HeaderText = "Название курса";
+			this.coursNameDataGridViewTextBoxColumn.Name = "coursNameDataGridViewTextBoxColumn";
+			this.coursNameDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// courseVolumeDataGridViewTextBoxColumn
+			// 
+			this.courseVolumeDataGridViewTextBoxColumn.DataPropertyName = "courseVolume";
+			this.courseVolumeDataGridViewTextBoxColumn.HeaderText = "Объем курса";
+			this.courseVolumeDataGridViewTextBoxColumn.Name = "courseVolumeDataGridViewTextBoxColumn";
+			this.courseVolumeDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// startDateDataGridViewTextBoxColumn
+			// 
+			this.startDateDataGridViewTextBoxColumn.DataPropertyName = "startDate";
+			this.startDateDataGridViewTextBoxColumn.HeaderText = "Дата начала";
+			this.startDateDataGridViewTextBoxColumn.Name = "startDateDataGridViewTextBoxColumn";
+			this.startDateDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// endDateDataGridViewTextBoxColumn
+			// 
+			this.endDateDataGridViewTextBoxColumn.DataPropertyName = "endDate";
+			this.endDateDataGridViewTextBoxColumn.HeaderText = "Дата окончания";
+			this.endDateDataGridViewTextBoxColumn.Name = "endDateDataGridViewTextBoxColumn";
+			this.endDateDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// coursTypeNameDataGridViewTextBoxColumn
+			// 
+			this.coursTypeNameDataGridViewTextBoxColumn.DataPropertyName = "coursTypeName";
+			this.coursTypeNameDataGridViewTextBoxColumn.HeaderText = "Вид курса";
+			this.coursTypeNameDataGridViewTextBoxColumn.Name = "coursTypeNameDataGridViewTextBoxColumn";
+			this.coursTypeNameDataGridViewTextBoxColumn.ReadOnly = true;
+			// 
+			// educationTypeDataGridViewTextBoxColumn
+			// 
+			this.educationTypeDataGridViewTextBoxColumn.DataPropertyName = "educationType";
+			this.educationTypeDataGridViewTextBoxColumn.HeaderText = "Форма обучения";
+			this.educationTypeDataGridViewTextBoxColumn.Name = "educationTypeDataGridViewTextBoxColumn";
+			this.educationTypeDataGridViewTextBoxColumn.ReadOnly = true;
 			// 
 			// courseNotPassedViewBindingSource
 			// 
@@ -245,89 +315,6 @@
 			this.dataGridView3.TabIndex = 1;
 			this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
 			// 
-			// coursesView1BindingSource
-			// 
-			this.coursesView1BindingSource.DataMember = "CoursesView1";
-			this.coursesView1BindingSource.DataSource = this.coursesDataSet;
-			// 
-			// dataGridView2
-			// 
-			this.dataGridView2.AllowUserToAddRows = false;
-			this.dataGridView2.AllowUserToDeleteRows = false;
-			this.dataGridView2.AutoGenerateColumns = false;
-			this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn2,
-            this.firstNameDataGridViewTextBoxColumn1,
-            this.midleNameDataGridViewTextBoxColumn1,
-            this.lastNameDataGridViewTextBoxColumn1,
-            this.dateOfBirthDataGridViewTextBoxColumn});
-			this.dataGridView2.DataSource = this.teachersViewBindingSource;
-			this.dataGridView2.Location = new System.Drawing.Point(6, 61);
-			this.dataGridView2.Name = "dataGridView2";
-			this.dataGridView2.ReadOnly = true;
-			this.dataGridView2.Size = new System.Drawing.Size(482, 313);
-			this.dataGridView2.TabIndex = 0;
-			// 
-			// teachersViewBindingSource
-			// 
-			this.teachersViewBindingSource.DataMember = "TeachersView";
-			this.teachersViewBindingSource.DataSource = this.coursesDataSet;
-			// 
-			// teachersViewTableAdapter
-			// 
-			this.teachersViewTableAdapter.ClearBeforeFill = true;
-			// 
-			// courseNotPassedViewTableAdapter
-			// 
-			this.courseNotPassedViewTableAdapter.ClearBeforeFill = true;
-			// 
-			// coursesViewTableAdapter
-			// 
-			this.coursesViewTableAdapter.ClearBeforeFill = true;
-			// 
-			// contextMenuStrip1
-			// 
-			this.contextMenuStrip1.Name = "contextMenuStrip1";
-			this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-			// 
-			// idDataGridViewTextBoxColumn2
-			// 
-			this.idDataGridViewTextBoxColumn2.DataPropertyName = "id";
-			this.idDataGridViewTextBoxColumn2.HeaderText = "Код";
-			this.idDataGridViewTextBoxColumn2.Name = "idDataGridViewTextBoxColumn2";
-			this.idDataGridViewTextBoxColumn2.ReadOnly = true;
-			this.idDataGridViewTextBoxColumn2.Width = 35;
-			// 
-			// firstNameDataGridViewTextBoxColumn1
-			// 
-			this.firstNameDataGridViewTextBoxColumn1.DataPropertyName = "firstName";
-			this.firstNameDataGridViewTextBoxColumn1.HeaderText = "Имя";
-			this.firstNameDataGridViewTextBoxColumn1.Name = "firstNameDataGridViewTextBoxColumn1";
-			this.firstNameDataGridViewTextBoxColumn1.ReadOnly = true;
-			// 
-			// midleNameDataGridViewTextBoxColumn1
-			// 
-			this.midleNameDataGridViewTextBoxColumn1.DataPropertyName = "midleName";
-			this.midleNameDataGridViewTextBoxColumn1.HeaderText = "Отчество";
-			this.midleNameDataGridViewTextBoxColumn1.Name = "midleNameDataGridViewTextBoxColumn1";
-			this.midleNameDataGridViewTextBoxColumn1.ReadOnly = true;
-			// 
-			// lastNameDataGridViewTextBoxColumn1
-			// 
-			this.lastNameDataGridViewTextBoxColumn1.DataPropertyName = "lastName";
-			this.lastNameDataGridViewTextBoxColumn1.HeaderText = "Фамилия";
-			this.lastNameDataGridViewTextBoxColumn1.Name = "lastNameDataGridViewTextBoxColumn1";
-			this.lastNameDataGridViewTextBoxColumn1.ReadOnly = true;
-			// 
-			// dateOfBirthDataGridViewTextBoxColumn
-			// 
-			this.dateOfBirthDataGridViewTextBoxColumn.DataPropertyName = "dateOfBirth";
-			this.dateOfBirthDataGridViewTextBoxColumn.HeaderText = "Дата рождения";
-			this.dateOfBirthDataGridViewTextBoxColumn.Name = "dateOfBirthDataGridViewTextBoxColumn";
-			this.dateOfBirthDataGridViewTextBoxColumn.ReadOnly = true;
-			this.dateOfBirthDataGridViewTextBoxColumn.Width = 90;
-			// 
 			// idDataGridViewTextBoxColumn1
 			// 
 			this.idDataGridViewTextBoxColumn1.DataPropertyName = "id";
@@ -382,75 +369,88 @@
 			this.endDateDataGridViewTextBoxColumn1.Name = "endDateDataGridViewTextBoxColumn1";
 			this.endDateDataGridViewTextBoxColumn1.ReadOnly = true;
 			// 
-			// idDataGridViewTextBoxColumn
+			// coursesView1BindingSource
 			// 
-			this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-			this.idDataGridViewTextBoxColumn.HeaderText = "Код";
-			this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-			this.idDataGridViewTextBoxColumn.ReadOnly = true;
+			this.coursesView1BindingSource.DataMember = "CoursesView1";
+			this.coursesView1BindingSource.DataSource = this.coursesDataSet;
 			// 
-			// firstNameDataGridViewTextBoxColumn
+			// dataGridView2
 			// 
-			this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "firstName";
-			this.firstNameDataGridViewTextBoxColumn.HeaderText = "Имя";
-			this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-			this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
+			this.dataGridView2.AllowUserToAddRows = false;
+			this.dataGridView2.AllowUserToDeleteRows = false;
+			this.dataGridView2.AutoGenerateColumns = false;
+			this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn2,
+            this.firstNameDataGridViewTextBoxColumn1,
+            this.midleNameDataGridViewTextBoxColumn1,
+            this.lastNameDataGridViewTextBoxColumn1,
+            this.dateOfBirthDataGridViewTextBoxColumn});
+			this.dataGridView2.DataSource = this.teachersViewBindingSource;
+			this.dataGridView2.Location = new System.Drawing.Point(6, 61);
+			this.dataGridView2.Name = "dataGridView2";
+			this.dataGridView2.ReadOnly = true;
+			this.dataGridView2.Size = new System.Drawing.Size(482, 313);
+			this.dataGridView2.TabIndex = 0;
 			// 
-			// midleNameDataGridViewTextBoxColumn
+			// idDataGridViewTextBoxColumn2
 			// 
-			this.midleNameDataGridViewTextBoxColumn.DataPropertyName = "midleName";
-			this.midleNameDataGridViewTextBoxColumn.HeaderText = "Отчество";
-			this.midleNameDataGridViewTextBoxColumn.Name = "midleNameDataGridViewTextBoxColumn";
-			this.midleNameDataGridViewTextBoxColumn.ReadOnly = true;
+			this.idDataGridViewTextBoxColumn2.DataPropertyName = "id";
+			this.idDataGridViewTextBoxColumn2.HeaderText = "Код";
+			this.idDataGridViewTextBoxColumn2.Name = "idDataGridViewTextBoxColumn2";
+			this.idDataGridViewTextBoxColumn2.ReadOnly = true;
+			this.idDataGridViewTextBoxColumn2.Width = 35;
 			// 
-			// lastNameDataGridViewTextBoxColumn
+			// firstNameDataGridViewTextBoxColumn1
 			// 
-			this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "lastName";
-			this.lastNameDataGridViewTextBoxColumn.HeaderText = "Фамилия";
-			this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-			this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
+			this.firstNameDataGridViewTextBoxColumn1.DataPropertyName = "firstName";
+			this.firstNameDataGridViewTextBoxColumn1.HeaderText = "Имя";
+			this.firstNameDataGridViewTextBoxColumn1.Name = "firstNameDataGridViewTextBoxColumn1";
+			this.firstNameDataGridViewTextBoxColumn1.ReadOnly = true;
 			// 
-			// coursNameDataGridViewTextBoxColumn
+			// midleNameDataGridViewTextBoxColumn1
 			// 
-			this.coursNameDataGridViewTextBoxColumn.DataPropertyName = "coursName";
-			this.coursNameDataGridViewTextBoxColumn.HeaderText = "Название курса";
-			this.coursNameDataGridViewTextBoxColumn.Name = "coursNameDataGridViewTextBoxColumn";
-			this.coursNameDataGridViewTextBoxColumn.ReadOnly = true;
+			this.midleNameDataGridViewTextBoxColumn1.DataPropertyName = "midleName";
+			this.midleNameDataGridViewTextBoxColumn1.HeaderText = "Отчество";
+			this.midleNameDataGridViewTextBoxColumn1.Name = "midleNameDataGridViewTextBoxColumn1";
+			this.midleNameDataGridViewTextBoxColumn1.ReadOnly = true;
 			// 
-			// courseVolumeDataGridViewTextBoxColumn
+			// lastNameDataGridViewTextBoxColumn1
 			// 
-			this.courseVolumeDataGridViewTextBoxColumn.DataPropertyName = "courseVolume";
-			this.courseVolumeDataGridViewTextBoxColumn.HeaderText = "Объем курса";
-			this.courseVolumeDataGridViewTextBoxColumn.Name = "courseVolumeDataGridViewTextBoxColumn";
-			this.courseVolumeDataGridViewTextBoxColumn.ReadOnly = true;
+			this.lastNameDataGridViewTextBoxColumn1.DataPropertyName = "lastName";
+			this.lastNameDataGridViewTextBoxColumn1.HeaderText = "Фамилия";
+			this.lastNameDataGridViewTextBoxColumn1.Name = "lastNameDataGridViewTextBoxColumn1";
+			this.lastNameDataGridViewTextBoxColumn1.ReadOnly = true;
 			// 
-			// startDateDataGridViewTextBoxColumn
+			// dateOfBirthDataGridViewTextBoxColumn
 			// 
-			this.startDateDataGridViewTextBoxColumn.DataPropertyName = "startDate";
-			this.startDateDataGridViewTextBoxColumn.HeaderText = "Дата начала";
-			this.startDateDataGridViewTextBoxColumn.Name = "startDateDataGridViewTextBoxColumn";
-			this.startDateDataGridViewTextBoxColumn.ReadOnly = true;
+			this.dateOfBirthDataGridViewTextBoxColumn.DataPropertyName = "dateOfBirth";
+			this.dateOfBirthDataGridViewTextBoxColumn.HeaderText = "Дата рождения";
+			this.dateOfBirthDataGridViewTextBoxColumn.Name = "dateOfBirthDataGridViewTextBoxColumn";
+			this.dateOfBirthDataGridViewTextBoxColumn.ReadOnly = true;
+			this.dateOfBirthDataGridViewTextBoxColumn.Width = 90;
 			// 
-			// endDateDataGridViewTextBoxColumn
+			// teachersViewBindingSource
 			// 
-			this.endDateDataGridViewTextBoxColumn.DataPropertyName = "endDate";
-			this.endDateDataGridViewTextBoxColumn.HeaderText = "Дата окончания";
-			this.endDateDataGridViewTextBoxColumn.Name = "endDateDataGridViewTextBoxColumn";
-			this.endDateDataGridViewTextBoxColumn.ReadOnly = true;
+			this.teachersViewBindingSource.DataMember = "TeachersView";
+			this.teachersViewBindingSource.DataSource = this.coursesDataSet;
 			// 
-			// coursTypeNameDataGridViewTextBoxColumn
+			// teachersViewTableAdapter
 			// 
-			this.coursTypeNameDataGridViewTextBoxColumn.DataPropertyName = "coursTypeName";
-			this.coursTypeNameDataGridViewTextBoxColumn.HeaderText = "Вид курса";
-			this.coursTypeNameDataGridViewTextBoxColumn.Name = "coursTypeNameDataGridViewTextBoxColumn";
-			this.coursTypeNameDataGridViewTextBoxColumn.ReadOnly = true;
+			this.teachersViewTableAdapter.ClearBeforeFill = true;
 			// 
-			// educationTypeDataGridViewTextBoxColumn
+			// courseNotPassedViewTableAdapter
 			// 
-			this.educationTypeDataGridViewTextBoxColumn.DataPropertyName = "educationType";
-			this.educationTypeDataGridViewTextBoxColumn.HeaderText = "Форма обучения";
-			this.educationTypeDataGridViewTextBoxColumn.Name = "educationTypeDataGridViewTextBoxColumn";
-			this.educationTypeDataGridViewTextBoxColumn.ReadOnly = true;
+			this.courseNotPassedViewTableAdapter.ClearBeforeFill = true;
+			// 
+			// coursesViewTableAdapter
+			// 
+			this.coursesViewTableAdapter.ClearBeforeFill = true;
+			// 
+			// contextMenuStrip1
+			// 
+			this.contextMenuStrip1.Name = "contextMenuStrip1";
+			this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
 			// 
 			// ВыдачаНаправлений
 			// 

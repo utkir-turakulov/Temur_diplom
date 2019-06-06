@@ -97,8 +97,9 @@ namespace Повышение_квалификации
 			int teacherIndex = dataGridView2.CurrentRow.Index;
 			int courseIndex = dataGridView3.CurrentRow.Index;
 
-			string query = @"insert Обучение(teacherId,coursId,coursePassed)
-							values({0},{1},1);";
+			string query = @"Insert_Education"; 
+							/* @"insert Обучение(teacherId,coursId,coursePassed)
+							values({0},{1},1);";*/
 
 
 			if (teacherIndex <0)
@@ -113,18 +114,43 @@ namespace Повышение_квалификации
 				return;
 			}
 
+			string id = null;
 			using (SqlConnection connection = dbWorker.GetConnection())
 			using (SqlCommand command = new SqlCommand())
 			{
 				command.Connection = connection;
-				command.CommandText = string.Format(query, dataGridView2[0, teacherIndex].Value.ToString(), dataGridView3[0, courseIndex].Value.ToString());
+				command.CommandText = query;
+				command.CommandType = CommandType.StoredProcedure; 
+				command.Parameters.AddWithValue("@teacherId", dataGridView2[0, teacherIndex].Value.ToString());
+				command.Parameters.AddWithValue("@coursId", dataGridView3[0, courseIndex].Value.ToString());
+				command.Parameters.AddWithValue("@coursPassed", 1);
+
 				connection.Open();
-				command.ExecuteNonQuery();
+				var reader = command.ExecuteReader();
+
+				if (reader.Read())
+				{
+					id = reader.GetValue(0).ToString();
+				}
 				connection.Close();
 			}
 
 
 			bool created = MakeTemplate(dataGridView3[0, courseIndex].Value.ToString(), dataGridView2[0, teacherIndex].Value.ToString());
+
+
+
+			if (!created)
+			{
+				using (SqlConnection connection = dbWorker.GetConnection())
+				using (SqlCommand command = new SqlCommand())
+				{
+					command.Connection = connection;
+					command.CommandText = $"delete from Обучение where id = {id}";
+					connection.Open();
+					command.ExecuteNonQuery();
+				}
+			}
 		}
 
 		public bool MakeTemplate(string courseIndex, string teacherIndex)
